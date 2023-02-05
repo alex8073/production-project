@@ -1,5 +1,5 @@
 import {useCallback, useState} from "react";
-import "./style.scss";
+import classes from "./style.module.scss";
 
 
 export const Counter = () => {
@@ -14,7 +14,7 @@ export const Counter = () => {
     return (
         <>
             <h1>{count}</h1>
-            <button onClick={increment}>increase</button>
+            <button onClick={increment} className={classes.btn}>increase</button>
         </>
     )
 }
