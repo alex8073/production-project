@@ -1,15 +1,13 @@
-import {render} from "react-dom";
-import App from "./App";
-import {BrowserRouter,} from "react-router-dom";
-import {ThemeProvider} from "./theme/ThemeProvider";
-
+import { render } from "react-dom";
+import App from "./app/App";
+import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from "app/provider/ThemeProvider";
 
 render(
-    <BrowserRouter>
-        <ThemeProvider>
-            <App/>
-        </ThemeProvider>
-    </BrowserRouter>,
-    document.querySelector("#root")
+  <BrowserRouter>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </BrowserRouter>,
+  document.querySelector("#root")
 );
-
