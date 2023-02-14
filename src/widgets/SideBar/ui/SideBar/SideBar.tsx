@@ -1,8 +1,9 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./SideBar.module.scss";
 import React, { useState } from "react";
-import { Button } from "shared/ui/Button/Button";
+import { Button, ThemeButton } from "shared/ui/Button/Button";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
+import { LangSwitcher } from "widgets/LangSwitcher";
 
 interface ISideBarProps {
   className?: string;
@@ -22,9 +23,11 @@ export const SideBar = ({ className }: ISideBarProps) => {
       ])}
     >
       <div className={cls.switchers}>
-        <Button onClick={onToggle}>toggle</Button>
+        <Button theme={ThemeButton.CLEAR} onClick={onToggle}>
+          Collapse
+        </Button>
         <ThemeSwitcher className={"changePosition"} />
-        {/*  <LangSwitcher /> */}
+        <LangSwitcher />
       </div>
     </div>
   );
