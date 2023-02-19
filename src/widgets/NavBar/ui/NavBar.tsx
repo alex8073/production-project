@@ -9,7 +9,7 @@ interface INavBarProps {
 }
 
 export const NavBar: FC<INavBarProps> = () => {
-    const { t } = useTranslation('main');
+    const { t } = useTranslation();
     return (
         <div className={classNames(cls.NavBar, {}, [])}>
             <div className={cls.links}>
@@ -22,7 +22,7 @@ export const NavBar: FC<INavBarProps> = () => {
                 </AppLink>
                 {/* eslint-disable-next-line i18next/no-literal-string */}
                 <AppLink theme={AppLinkTheme.RED} to="/about">
-                    AboutPage
+                    {t('About us')}
                 </AppLink>
             </div>
         </div>

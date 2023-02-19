@@ -2,5 +2,7 @@
   "Welcome to React": "Добро пожаловать в React",
   "Translate": "Перевод",
   "Language": "English",
-  "Page not found": "Page not found"
+  "Main page": "Главная",
+  "About us": "О нас",
+  "Page not found": "Страница не найдена"
 }
