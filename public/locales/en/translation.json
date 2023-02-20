@@ -4,5 +4,8 @@
   "Language": "Русский",
   "Main page": "Main page",
   "About us": "About us",
-  "Page not found": "Page not found"
+  "Page not found": "Page not found",
+  "An unexpected error has occurred": "An unexpected error has occurred",
+  "Refresh the page": "Refresh the page",
+  "Throw error": "Throw error"
 }

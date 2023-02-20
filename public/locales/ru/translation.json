@@ -4,5 +4,8 @@
   "Language": "English",
   "Main page": "Главная",
   "About us": "О нас",
-  "Page not found": "Страница не найдена"
+  "Page not found": "Страница не найдена",
+  "An unexpected error has occurred": "Произошла непредвиденная ошибка",
+  "Refresh the page": "Обновить страницу",
+  "Throw error": "Создать ошибку"
 }
