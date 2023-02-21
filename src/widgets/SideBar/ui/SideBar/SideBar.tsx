@@ -18,13 +18,17 @@ export const SideBar = ({ className }: ISideBarProps) => {
 
     return (
         <div
+            data-testid="sidebar"
             className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [
                 className,
             ])}
         >
             <div className={cls.switchers}>
-                {/* eslint-disable-next-line i18next/no-literal-string */}
-                <Button theme={ThemeButton.CLEAR} onClick={onToggle}>
+                <Button
+                    data-testid="sidebar-toggle"
+                    theme={ThemeButton.CLEAR}
+                    onClick={onToggle}
+                >
                     Collapse
                 </Button>
                 <ThemeSwitcher className="changePosition" />
