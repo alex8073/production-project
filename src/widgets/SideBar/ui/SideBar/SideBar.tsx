@@ -1,3 +1,4 @@
+/* eslint-disable i18next/no-literal-string */
 import { classNames } from 'shared/lib/classNames/classNames';
 import React, { useState } from 'react';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';

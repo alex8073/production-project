@@ -20,8 +20,10 @@ export const NavBar: FC<INavBarProps> = () => {
                 >
                     {t('Main page')}
                 </AppLink>
-                {/* eslint-disable-next-line i18next/no-literal-string */}
-                <AppLink theme={AppLinkTheme.RED} to="/about">
+                <AppLink
+                    theme={AppLinkTheme.RED}
+                    to="/about"
+                >
                     {t('About us')}
                 </AppLink>
             </div>
