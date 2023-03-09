@@ -26,6 +26,12 @@ ThemeClear.args = {
     theme: ButtonTheme.CLEAR,
 };
 
+export const ThemeClearInverted = Template.bind({});
+ThemeClearInverted.args = {
+    children: 'Text',
+    theme: ButtonTheme.CLEAR_INVERTED,
+};
+
 export const ThemeOutline = Template.bind({});
 ThemeOutline.args = {
     children: 'Text',
