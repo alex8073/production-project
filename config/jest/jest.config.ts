@@ -64,7 +64,7 @@ export default {
     // The directory where Jest should output its coverage files
     // coverageDirectory: undefined,
 
-    // Indicates which provider should be used to instrument code for coverage
+    // Indicates which providers should be used to instrument code for coverage
     // coverageProvider: "babel",
 
     // A list of reporter names that Jest uses when writing coverage reports
