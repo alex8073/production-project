@@ -3,6 +3,6 @@ export {
     userActions,
 } from './model/slice/userSlice';
 export {
-    User,
-    UserSchema,
+    IUser,
+    IUserSchema,
 } from './model/types/user';

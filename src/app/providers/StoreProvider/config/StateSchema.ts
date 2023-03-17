@@ -1,7 +1,7 @@
-import { CounterSchema } from 'entities/Counter';
-import { UserSchema } from 'entities/User';
+import { ICounterSchema } from 'entities/Counter';
+import { IUserSchema } from 'entities/User';
 
-export interface StateSchema {
-    counter: CounterSchema;
-    user: UserSchema;
+export interface IStateSchema {
+    counter: ICounterSchema;
+    user: IUserSchema;
 }

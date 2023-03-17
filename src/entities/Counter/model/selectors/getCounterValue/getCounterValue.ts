@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
 import { getCounter } from '../getCounter/getCounter';
-import { CounterSchema } from '../../types/counterSchema';
+import { ICounterSchema } from '../../types/counterSchema';
 
-export const getCounterValue = createSelector(getCounter, (counter: CounterSchema) => counter.value);
+export const getCounterValue = createSelector(getCounter, (counter: ICounterSchema) => counter.value);
