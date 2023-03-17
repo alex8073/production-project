@@ -5,4 +5,4 @@ export {
 export {
     User,
     UserSchema,
-} from './model/types/User';
+} from './model/types/user';
