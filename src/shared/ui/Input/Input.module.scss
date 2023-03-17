@@ -1,0 +1,15 @@
+.InputWrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input {
+    background: transparent;
+    outline: none;
+    flex: 1;
+
+    &:focus {
+        outline: none;
+    }
+}
