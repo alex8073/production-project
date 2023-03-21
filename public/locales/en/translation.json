@@ -10,8 +10,11 @@
   "Refresh the page": "Refresh the page",
   "Throw error": "Throw error",
   "Log in": "Log in",
+  "Log out": "Log out",
   "Increment": "Increment",
   "Decrement": "Decrement",
   "User name": "User name",
-  "Password": "Password"
+  "Password": "Password",
+  "Login form": "Login form",
+  "Incorrect login or password": "Incorrect login or password"
 }
