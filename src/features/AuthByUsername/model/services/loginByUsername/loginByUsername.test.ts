@@ -1,4 +1,3 @@
-import { Dispatch } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
