@@ -34,7 +34,14 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "firstName": "Alex",
+    "lastName": "P",
+    "age": "27",
+    "currency": "USD",
+    "country": "Belarus",
+    "city": "Minsk",
+    "username": "admin",
+    "avatar": "https://www.motorcyclistonline.com/resizer/or89BKVtRFbizXC0Ayav2rmY_Ug=/1440x0/smart/cloudfront-us-east-1.images.arcpublishing.com/octane/BTQS47EV5ZNTDIL5OB2GNSFHWY.jpg"
   },
   "users": [
     {

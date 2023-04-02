@@ -29,30 +29,10 @@
     gap: 16px;
 }
 
-.item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.icon {
-    color: var(--inverted-primary-color);
-}
-
-.link {
-    white-space: nowrap;
-    transition: opacity 0.3s;
-}
-
 .collapsed {
     width: var(--sidebar-width-collapsed);
 
     .switchers {
         flex-direction: column;
-    }
-
-    .link {
-        opacity: 0;
-        width: 0;
     }
 }

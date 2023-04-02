@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import './Loader.scss';
 
@@ -5,7 +6,7 @@ interface ILoaderProps {
   className?: string;
 }
 
-export const Loader = ({ className }: ILoaderProps) => (
+export const Loader = memo(({ className }: ILoaderProps) => (
     <div className={classNames('lds-spinner', {}, [className])}>
         <div />
         <div />
@@ -20,4 +21,4 @@ export const Loader = ({ className }: ILoaderProps) => (
         <div />
         <div />
     </div>
-);
+));
