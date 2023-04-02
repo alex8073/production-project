@@ -1,10 +1,11 @@
-import { ICounterSchema } from 'entities/Counter';
-import { IUserSchema } from 'entities/User';
-import { ILoginSchema } from 'features/AuthByUsername';
+import { CombinedState } from 'redux';
 import {
     AnyAction, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { CombinedState } from 'redux';
+import { ICounterSchema } from 'entities/Counter';
+import { IUserSchema } from 'entities/User';
+import { ILoginSchema } from 'features/AuthByUsername';
+import { IProfileSchema } from 'entities/Profile';
 
 export interface IStateSchema {
     counter: ICounterSchema;
@@ -12,6 +13,7 @@ export interface IStateSchema {
 
     // Асинхронные редьюсеры
     loginForm?: ILoginSchema;
+    profile?: IProfileSchema;
 }
 
 export type IStateSchemaKey = keyof IStateSchema;
