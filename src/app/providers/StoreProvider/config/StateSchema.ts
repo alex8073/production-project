@@ -1,4 +1,4 @@
-import { CombinedState, Dispatch } from 'redux';
+import { CombinedState } from 'redux';
 import {
     AnyAction, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
@@ -33,11 +33,10 @@ export interface IReduxStoreWithManager extends EnhancedStore<IStateSchema>{
 
 export interface IThunkExtraArg {
     api: AxiosInstance;
-    navigate?: (to: To, options?: NavigateOptions) => void,
+    navigate: (to: To, options?: NavigateOptions) => void,
 }
 
 export interface IThunkConfig<T> {
     rejectValue: T,
-    extra: IThunkExtraArg,
-    dispatch?: Dispatch
+    extra: IThunkExtraArg
 }

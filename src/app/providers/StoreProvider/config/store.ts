@@ -5,7 +5,6 @@ import { createReducerManager } from 'app/providers/StoreProvider/config/reducer
 import { api } from 'shared/api/api';
 import { To } from '@remix-run/router';
 import { NavigateOptions } from 'react-router/dist/lib/context';
-import { CombinedState, Reducer } from 'redux';
 import { IStateSchema } from './StateSchema';
 
 export function createReduxStore(
@@ -22,7 +21,7 @@ export function createReduxStore(
     const reducerManager = createReducerManager(rootReducers);
 
     const store = configureStore({
-        reducer: reducerManager.reduce as Reducer<CombinedState<IStateSchema>>,
+        reducer: reducerManager.reduce,
         devTools: __IS_DEV__,
         preloadedState: initialState,
         middleware: (getDefaultMiddleware) => getDefaultMiddleware({

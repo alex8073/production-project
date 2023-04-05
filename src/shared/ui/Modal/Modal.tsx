@@ -1,7 +1,7 @@
 import {
     ReactNode, MouseEvent, useState, useRef, useEffect, useCallback,
 } from 'react';
-import { classNames, IMods } from 'shared/lib/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
 import cls from './Modal.module.scss';
 
@@ -65,7 +65,7 @@ export const Modal = (props: IModalProps) => {
         };
     }, [isOpen, onKeyDown]);
 
-    const mods: IMods = {
+    const mods = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };
