@@ -2,5 +2,7 @@
   "Profile": "Profile",
   "Edit": "Edit",
   "Name": "Name",
-  "Surname": "Surname"
+  "Surname": "Surname",
+  "Profile loading error": "Profile loading error",
+  "Try to reload page": "Try to reload page"
 }

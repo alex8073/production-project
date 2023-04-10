@@ -2,5 +2,8 @@
   "Profile": "Профиль",
   "Edit": "Редактировать",
   "Name": "Имя",
-  "Surname": "Фамилия"
+  "Surname": "Фамилия",
+  "Profile loading error": "Ошибка загрузки профиля",
+  "Try to reload page": "Попробуйте обновить страницу"
+
 }
