@@ -1,6 +1,9 @@
 {
   "About us": "About us",
+  "Age": "Age",
   "An unexpected error has occurred": "An unexpected error has occurred",
+  "Cancel": "Cancel",
+  "City": "City",
   "Decrement": "Decrement",
   "Edit": "Edit",
   "Incorrect login or password": "Incorrect login or password",
@@ -17,6 +20,7 @@
   "Profile Page": "Profile Page",
   "Profile loading error": "Profile loading error",
   "Refresh the page": "Refresh the page",
+  "Save": "Save",
   "Surname": "Surname",
   "Throw error": "Throw error",
   "Try to reload page": "Try to reload page",

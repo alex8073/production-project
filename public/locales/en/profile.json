@@ -1,8 +1,12 @@
 {
   "Profile": "Profile",
   "Edit": "Edit",
+  "Cancel": "Cancel",
+  "Save": "Save",
   "Name": "Name",
   "Surname": "Surname",
+  "Age": "Age",
+  "City": "City",
   "Profile loading error": "Profile loading error",
   "Try to reload page": "Try to reload page"
 }
