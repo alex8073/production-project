@@ -1,6 +1,16 @@
 {
   "Profile": "Profile",
   "Edit": "Edit",
+  "Cancel": "Cancel",
+  "Save": "Save",
   "Name": "Name",
-  "Surname": "Surname"
+  "Surname": "Surname",
+  "Age": "Age",
+  "City": "City",
+  "Username": "Username",
+  "Avatar": "Avatar",
+  "Select currency": "Select currency",
+  "Select country": "Select country",
+  "Profile loading error": "Profile loading error",
+  "Try to reload page": "Try to reload page"
 }

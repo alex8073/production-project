@@ -1,6 +1,10 @@
 {
   "About us": "About us",
+  "Age": "Age",
   "An unexpected error has occurred": "An unexpected error has occurred",
+  "Avatar": "Avatar",
+  "Cancel": "Cancel",
+  "City": "City",
   "Decrement": "Decrement",
   "Edit": "Edit",
   "Incorrect login or password": "Incorrect login or password",
@@ -15,9 +19,15 @@
   "Password": "Password",
   "Profile": "Profile",
   "Profile Page": "Profile Page",
+  "Profile loading error": "Profile loading error",
   "Refresh the page": "Refresh the page",
+  "Save": "Save",
+  "Select country": "Select country",
+  "Select currency": "Select currency",
   "Surname": "Surname",
   "Throw error": "Throw error",
+  "Try to reload page": "Try to reload page",
   "User name": "User name",
+  "Username": "Username",
   "Войти": "Войти"
 }

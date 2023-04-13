@@ -39,5 +39,6 @@ export interface IThunkExtraArg {
 export interface IThunkConfig<T> {
     rejectValue: T,
     extra: IThunkExtraArg,
-    dispatch?: Dispatch
+    dispatch?: Dispatch,
+    state: IStateSchema,
 }

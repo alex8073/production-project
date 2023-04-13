@@ -3,17 +3,25 @@
     border: 2px solid var(--inverted-bg-color);
 }
 
-.header {
-    display: flex;
-    margin-bottom: 30px;
-}
-
-.editBtn {
-    justify-self: end;
-}
-
 .data {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.loading,
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+
+.avatarWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.editing {
+    border: 2px solid var(--inverted-secondary-color);
 }
