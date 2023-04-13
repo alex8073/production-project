@@ -16,6 +16,7 @@ interface ISelectProps {
     options?: ISelectOption[];
     value?: string;
     onChange?: (value: string) => void;
+    readOnly?: boolean;
 }
 
 export const Select = memo((props: ISelectProps) => {
@@ -26,6 +27,7 @@ export const Select = memo((props: ISelectProps) => {
         options,
         value,
         onChange,
+        readOnly,
     } = props;
 
     const optionList = useMemo(() => options?.map((item) => (
@@ -53,6 +55,7 @@ export const Select = memo((props: ISelectProps) => {
                 className={cls.select}
                 value={value}
                 onChange={onChangeHandler}
+                disabled={readOnly}
             >
                 {optionList}
             </select>

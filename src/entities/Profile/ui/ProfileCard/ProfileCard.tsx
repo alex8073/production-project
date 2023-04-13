@@ -4,6 +4,10 @@ import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Currency } from 'entities/Currency/model/types/currency';
+import { CurrencySelect } from 'entities/Currency';
+import { Country } from 'entities/Country/model/types/country';
+import { CountrySelect } from 'entities/Country';
 import cls from './ProfileCard.module.scss';
 import { IProfile } from '../../types/profile';
 
@@ -19,6 +23,8 @@ interface IProfileCardProps {
     onChangeCity?: (value: string) => void;
     onChangeUsername?: (value: string) => void;
     onChangeAvatar?: (value: string) => void;
+    onChangeCurrency?: (currency: Currency) => void;
+    onChangeCountry?: (country: Country) => void;
 }
 
 export const ProfileCard = (props: IProfileCardProps) => {
@@ -34,6 +40,8 @@ export const ProfileCard = (props: IProfileCardProps) => {
         onChangeCity,
         onChangeUsername,
         onChangeAvatar,
+        onChangeCurrency,
+        onChangeCountry,
     } = props;
     const { t } = useTranslation('profile');
 
@@ -116,6 +124,18 @@ export const ProfileCard = (props: IProfileCardProps) => {
                     placeholder={t('Avatar')}
                     className={cls.input}
                     onChange={onChangeAvatar}
+                    readOnly={readOnly}
+                />
+                <CurrencySelect
+                    value={data?.currency}
+                    onChange={onChangeCurrency}
+                    className={cls.input}
+                    readOnly={readOnly}
+                />
+                <CountrySelect
+                    value={data?.country}
+                    onChange={onChangeCountry}
+                    className={cls.input}
                     readOnly={readOnly}
                 />
             </div>
