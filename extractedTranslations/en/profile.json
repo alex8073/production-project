@@ -1,5 +1,6 @@
 {
   "Age": "",
+  "Avatar": "",
   "Cancel": "",
   "City": "",
   "Edit": "",
@@ -8,5 +9,6 @@
   "Profile loading error": "",
   "Save": "",
   "Surname": "",
-  "Try to reload page": ""
+  "Try to reload page": "",
+  "Username": ""
 }

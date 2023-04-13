@@ -2,6 +2,7 @@
   "About us": "About us",
   "Age": "Age",
   "An unexpected error has occurred": "An unexpected error has occurred",
+  "Avatar": "Avatar",
   "Cancel": "Cancel",
   "City": "City",
   "Decrement": "Decrement",
@@ -25,5 +26,6 @@
   "Throw error": "Throw error",
   "Try to reload page": "Try to reload page",
   "User name": "User name",
+  "Username": "Username",
   "Войти": "Войти"
 }

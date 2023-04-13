@@ -7,6 +7,8 @@
   "Surname": "Surname",
   "Age": "Age",
   "City": "City",
+  "Username": "Username",
+  "Avatar": "Avatar",
   "Profile loading error": "Profile loading error",
   "Try to reload page": "Try to reload page"
 }
