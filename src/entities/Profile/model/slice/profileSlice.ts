@@ -1,7 +1,7 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IProfile, IProfileSchema } from '../../model/types/profile';
-import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
-import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { IProfile, IProfileSchema } from "../../model/types/profile";
+import { fetchProfileData } from "../../model/services/fetchProfileData/fetchProfileData";
+import { updateProfileData } from "../../model/services/updateProfileData/updateProfileData";
 
 const initialState: IProfileSchema = {
     readOnly: true,
@@ -11,7 +11,7 @@ const initialState: IProfileSchema = {
 };
 
 export const profileSlice = createSlice({
-    name: 'profile',
+    name: "profile",
     initialState,
     reducers: {
         setReadOnly: (state, action: PayloadAction<boolean>) => {

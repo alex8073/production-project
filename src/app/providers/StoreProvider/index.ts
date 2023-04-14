@@ -1,8 +1,8 @@
-import { createReduxStore, IAppDispatch } from './config/store';
-import { StoreProvider } from './ui/StoreProvider';
+import { createReduxStore, IAppDispatch } from "./config/store";
+import { StoreProvider } from "./ui/StoreProvider";
 import type {
     IStateSchema, IReduxStoreWithManager, IThunkExtraArg, IThunkConfig,
-} from './config/StateSchema';
+} from "./config/StateSchema";
 
 export {
     StoreProvider,

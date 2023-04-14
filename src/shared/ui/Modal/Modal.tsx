@@ -1,9 +1,9 @@
 import {
     ReactNode, MouseEvent, useState, useRef, useEffect, useCallback,
-} from 'react';
-import { classNames, IMods } from 'shared/lib/classNames/classNames';
-import { Portal } from 'shared/ui/Portal/Portal';
-import cls from './Modal.module.scss';
+} from "react";
+import { classNames, IMods } from "shared/lib/classNames/classNames";
+import { Portal } from "shared/ui/Portal/Portal";
+import cls from "./Modal.module.scss";
 
 interface IModalProps {
   className?: string;
@@ -49,19 +49,19 @@ export const Modal = (props: IModalProps) => {
     };
 
     const onKeyDown = useCallback((e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
+        if (e.key === "Escape") {
             closeHandler();
         }
     }, [closeHandler]);
 
     useEffect(() => {
         if (isOpen) {
-            window.addEventListener('keydown', onKeyDown);
+            window.addEventListener("keydown", onKeyDown);
         }
 
         return () => {
             clearTimeout(timeRef.current);
-            window.removeEventListener('keydown', onKeyDown);
+            window.removeEventListener("keydown", onKeyDown);
         };
     }, [isOpen, onKeyDown]);
 

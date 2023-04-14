@@ -1,6 +1,6 @@
-import { CSSProperties, useMemo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './Avatar.module.scss';
+import { CSSProperties, useMemo } from "react";
+import { classNames } from "shared/lib/classNames/classNames";
+import cls from "./Avatar.module.scss";
 
 interface IAvatarProps {
     className?: string;
@@ -13,7 +13,7 @@ export const Avatar = (props: IAvatarProps) => {
     const {
         className,
         src,
-        alt = '',
+        alt = "",
         size = 100,
     } = props;
 

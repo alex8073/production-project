@@ -1,20 +1,20 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { memo, useCallback, useEffect } from 'react';
-import { DynamicModuleLoader, IReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { classNames } from "shared/lib/classNames/classNames";
+import { useTranslation } from "react-i18next";
+import { memo, useCallback, useEffect } from "react";
+import { DynamicModuleLoader, IReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {
     fetchProfileData,
     getProfileError,
     getProfileLoading, getProfileReadOnly, profileActions,
     ProfileCard,
     profileReducer,
-} from 'entities/Profile';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useSelector } from 'react-redux';
-import { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm/getProfileForm';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country/model/types/country';
-import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
+} from "entities/Profile";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useSelector } from "react-redux";
+import { getProfileForm } from "entities/Profile/model/selectors/getProfileForm/getProfileForm";
+import { Currency } from "entities/Currency";
+import { Country } from "entities/Country/model/types/country";
+import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 interface IProfilePageProps {
     className?: string;
@@ -23,7 +23,7 @@ interface IProfilePageProps {
 const initialReducers: IReducersList = { profile: profileReducer };
 
 const ProfilePage = memo(({ className }: IProfilePageProps) => {
-    const { t } = useTranslation('profile');
+    const { t } = useTranslation("profile");
     const dispatch = useAppDispatch();
 
     const formData = useSelector(getProfileForm);
@@ -69,7 +69,7 @@ const ProfilePage = memo(({ className }: IProfilePageProps) => {
 
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
-            <div className={classNames('', {}, [className])}>
+            <div className={classNames("", {}, [className])}>
                 <ProfilePageHeader />
                 <ProfileCard
                     data={formData}

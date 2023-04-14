@@ -1,26 +1,26 @@
-import { RouteProps } from 'react-router-dom';
-import { MainPage } from 'pages/MainPage';
-import { AboutPage } from 'pages/AboutPage';
-import { NotFoundPage } from 'pages/NotFoundPage';
-import { ProfilePage } from 'pages/ProfilePage';
+import { RouteProps } from "react-router-dom";
+import { MainPage } from "pages/MainPage";
+import { AboutPage } from "pages/AboutPage";
+import { NotFoundPage } from "pages/NotFoundPage";
+import { ProfilePage } from "pages/ProfilePage";
 
 type AppRouteProps = RouteProps & {
     authOnly?: boolean
 }
 
 export enum AppRoutes {
-    MAIN = 'main',
-    ABOUT = 'about',
-    PROFILE = 'profile',
+    MAIN = "main",
+    ABOUT = "about",
+    PROFILE = "profile",
     // last
-    NOT_FOUND = 'not_found'
+    NOT_FOUND = "not_found"
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
-    [AppRoutes.MAIN]: '/',
-    [AppRoutes.ABOUT]: '/about',
-    [AppRoutes.PROFILE]: '/profile',
-    [AppRoutes.NOT_FOUND]: '*',
+    [AppRoutes.MAIN]: "/",
+    [AppRoutes.ABOUT]: "/about",
+    [AppRoutes.PROFILE]: "/profile",
+    [AppRoutes.NOT_FOUND]: "*",
 };
 
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {

@@ -1,9 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
+import { classNames } from "shared/lib/classNames/classNames";
+import { useTranslation } from "react-i18next";
 import {
     ChangeEvent, memo, useCallback, useMemo,
-} from 'react';
-import cls from './Select.module.scss';
+} from "react";
+import cls from "./Select.module.scss";
 
 interface ISelectOption {
     value: string;

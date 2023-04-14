@@ -1,15 +1,15 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecrator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import { Loader } from './Loader';
+import { ThemeDecorator } from "shared/config/storybook/ThemeDecrator/ThemeDecorator";
+import { Theme } from "app/providers/ThemeProvider";
+import { Loader } from "./Loader";
 
 export default {
-    title: 'shared/Loader',
+    title: "shared/Loader",
     component: Loader,
     argTypes: {
-        backgroundColor: { control: 'color' },
+        backgroundColor: { control: "color" },
     },
 } as ComponentMeta<typeof Loader>;
 

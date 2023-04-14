@@ -1,12 +1,12 @@
 /* eslint-disable i18next/no-literal-string */
-import { classNames } from 'shared/lib/classNames/classNames';
-import { memo, useMemo, useState } from 'react';
-import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-import { LangSwitcher } from 'widgets/LangSwitcher';
-import { SideBarItemsList } from '../../model/items';
-import { SidebarItem } from '../SidebarItem/SidebarItem';
-import cls from './SideBar.module.scss';
+import { classNames } from "shared/lib/classNames/classNames";
+import { memo, useMemo, useState } from "react";
+import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
+import { ThemeSwitcher } from "widgets/ThemeSwitcher";
+import { LangSwitcher } from "widgets/LangSwitcher";
+import { SideBarItemsList } from "../../model/items";
+import { SidebarItem } from "../SidebarItem/SidebarItem";
+import cls from "./SideBar.module.scss";
 
 interface ISideBarProps {
   className?: string;
@@ -53,7 +53,7 @@ export const SideBar = memo(({ className }: ISideBarProps) => {
                 square
                 size={ButtonSize.L}
             >
-                {collapsed ? '>' : '<'}
+                {collapsed ? ">" : "<"}
             </Button>
         </div>
     );

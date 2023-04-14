@@ -1,19 +1,19 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Input } from 'shared/ui/Input/Input';
-import { useSelector } from 'react-redux';
-import { memo, useCallback } from 'react';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { DynamicModuleLoader, IReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
-import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
-import { loginActions, loginReducer } from '../../model/slice/loginSlice';
-import cls from './LoginForm.module.scss';
-import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
-import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
-import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
+import { classNames } from "shared/lib/classNames/classNames";
+import { useTranslation } from "react-i18next";
+import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { Input } from "shared/ui/Input/Input";
+import { useSelector } from "react-redux";
+import { memo, useCallback } from "react";
+import { Text, TextTheme } from "shared/ui/Text/Text";
+import { DynamicModuleLoader, IReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
+import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
+import { loginActions, loginReducer } from "../../model/slice/loginSlice";
+import cls from "./LoginForm.module.scss";
+import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
+import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
+import { getLoginError } from "../../model/selectors/getLoginError/getLoginError";
 
 export interface ILoginFormProps {
     className?: string;
@@ -55,16 +55,16 @@ const LoginForm = memo(({ className, onSuccess }: ILoginFormProps) => {
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <div className={classNames(cls.LoginForm, {}, [className])}>
-                <Text title={t('Login form')} />
-                {error && <Text text={t('Incorrect login or password')} theme={TextTheme.ERROR} />}
+                <Text title={t("Login form")} />
+                {error && <Text text={t("Incorrect login or password")} theme={TextTheme.ERROR} />}
                 <Input
-                    placeholder={t('User name')}
+                    placeholder={t("User name")}
                     value={username}
                     onChange={onUsernameChange}
                     autoFocus
                 />
                 <Input
-                    placeholder={t('Password')}
+                    placeholder={t("Password")}
                     value={password}
                     onChange={onPasswordChange}
                 />
@@ -74,7 +74,7 @@ const LoginForm = memo(({ className, onSuccess }: ILoginFormProps) => {
                     className={classNames(cls.loginBtn, {}, [])}
                     disabled={isLoading}
                 >
-                    {t('Log in')}
+                    {t("Log in")}
                 </Button>
             </div>
         </DynamicModuleLoader>

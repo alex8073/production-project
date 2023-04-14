@@ -3,53 +3,53 @@
  * https://jestjs.io/docs/configuration
  */
 
-import path from 'path';
+import path from "path";
 
 export default {
     // Automatically clear mock calls, instances and results before every test
     clearMocks: true,
     // The test environment that will be used for testing
-    testEnvironment: 'jsdom',
+    testEnvironment: "jsdom",
     // An array of regexp pattern strings used to skip coverage collection
     coveragePathIgnorePatterns: [
-        '\\\\node_modules\\\\',
+        "\\\\node_modules\\\\",
     ],
     // An array of file extensions your modules use
     moduleFileExtensions: [
-        'js',
-        'jsx',
-        'ts',
-        'tsx',
-        'json',
-        'node',
+        "js",
+        "jsx",
+        "ts",
+        "tsx",
+        "json",
+        "node",
     ],
     // An array of directory names to be searched recursively up from the requiring module's location
     moduleDirectories: [
-        'node_modules',
+        "node_modules",
     ],
     // The glob patterns Jest uses to detect test files
     testMatch: [
         // усть разница на Mac и Windows
-        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
+        "<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)",
     ],
     // The root directory that Jest should scan for tests and modules within
-    rootDir: '../../',
+    rootDir: "../../",
 
     modulePaths: [
-        '<rootDir>src/',
+        "<rootDir>src/",
     ],
 
-    setupFilesAfterEnv: ['<rootDir>config/jest/setupTest.ts'],
+    setupFilesAfterEnv: ["<rootDir>config/jest/setupTest.ts"],
 
     moduleNameMapper: {
-        '\\.(s?css)$': 'identity-obj-proxy',
-        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+        "\\.(s?css)$": "identity-obj-proxy",
+        "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
     },
 
     // A set of global variables that need to be available in all test environments
     globals: {
         __IS_DEV__: true,
-        __API__: '',
+        __API__: "",
     },
 
     // All imported modules in your tests should be mocked automatically
