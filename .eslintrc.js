@@ -42,7 +42,8 @@ module.exports = {
         "no-shadow": "off",
         "no-underscore-dangle": "off",
         "no-unused-vars": "warn",
-        "react/jsx-props-no-spreading": "warn",
+        "@typescript-eslint/no-unused-vars": "off",
+        "react/jsx-props-no-spreading": "off",
         "i18next/no-literal-string": [
             "error",
             {
