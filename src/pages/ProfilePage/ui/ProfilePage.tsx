@@ -11,7 +11,7 @@ import {
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { getProfileForm } from 'entities/Profile/selectors/getProfileForm/getProfileForm';
+import { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm/getProfileForm';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country/model/types/country';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
