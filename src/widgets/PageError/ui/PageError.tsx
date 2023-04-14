@@ -1,8 +1,8 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button/Button';
-import { memo } from 'react';
-import cls from './PageError.module.scss';
+import { classNames } from "shared/lib/classNames/classNames";
+import { useTranslation } from "react-i18next";
+import { Button } from "shared/ui/Button/Button";
+import { memo } from "react";
+import cls from "./PageError.module.scss";
 
 interface IPageErrorProps {
   className?: string;
@@ -18,9 +18,9 @@ export const PageError = memo(({ className }: IPageErrorProps) => {
 
     return (
         <div className={classNames(cls.PageError, {}, [className])}>
-            <p>{t('An unexpected error has occurred')}</p>
+            <p>{t("An unexpected error has occurred")}</p>
             <Button onClick={reloadPage}>
-                {t('Refresh the page')}
+                {t("Refresh the page")}
             </Button>
         </div>
     );

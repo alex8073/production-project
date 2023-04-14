@@ -1,8 +1,8 @@
-import { IStateSchema } from 'app/providers/StoreProvider';
-import { getCounterValue } from './getCounterValue';
+import { IStateSchema } from "app/providers/StoreProvider";
+import { getCounterValue } from "./getCounterValue";
 
-describe('getCounterValue', () => {
-    test('should return counter value', () => {
+describe("getCounterValue", () => {
+    test("should return counter value", () => {
         const state: DeepPartial<IStateSchema> = {
             counter: { value: 10 },
         };

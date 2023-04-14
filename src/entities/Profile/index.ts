@@ -1,14 +1,15 @@
-export { IProfile, IProfileSchema } from './types/profile';
+export { IProfile, IProfileSchema, ValidateProfileError } from "./model/types/profile";
 
-export { profileReducer, profileActions } from './slice/profileSlice';
+export { profileReducer, profileActions } from "./model/slice/profileSlice";
 
-export { fetchProfileData } from './services/fetchProfileData/fetchProfileData';
-export { updateProfileData } from './services/updateProfileData/updateProfileData';
+export { fetchProfileData } from "./model/services/fetchProfileData/fetchProfileData";
+export { updateProfileData } from "./model/services/updateProfileData/updateProfileData";
 
-export { ProfileCard } from './ui/ProfileCard/ProfileCard';
+export { ProfileCard } from "./ui/ProfileCard/ProfileCard";
 
-export { getProfileData } from './selectors/getProfileData/getProfileData';
-export { getProfileForm } from './selectors/getProfileForm/getProfileForm';
-export { getProfileError } from './selectors/getProfileError/getProfileError';
-export { getProfileLoading } from './selectors/getProfileLoading/getProfileLoading';
-export { getProfileReadOnly } from './selectors/getProfileReadOnly/getProfileReadOnly';
+export { getProfileData } from "./model/selectors/getProfileData/getProfileData";
+export { getProfileForm } from "./model/selectors/getProfileForm/getProfileForm";
+export { getProfileError } from "./model/selectors/getProfileError/getProfileError";
+export { getProfileLoading } from "./model/selectors/getProfileLoading/getProfileLoading";
+export { getProfileReadOnly } from "./model/selectors/getProfileReadOnly/getProfileReadOnly";
+export { getProfileValidationErrors } from "./model/selectors/getProfileValidationErrors/getProfileValidationErrors";

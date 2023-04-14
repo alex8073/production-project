@@ -1,43 +1,43 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from "shared/lib/classNames/classNames";
 
-describe('classNames', () => {
-    test('with only main class', () => {
-        expect(classNames('someClass')).toBe('someClass');
+describe("classNames", () => {
+    test("with only main class", () => {
+        expect(classNames("someClass")).toBe("someClass");
     });
 
-    test('with additional classes', () => {
+    test("with additional classes", () => {
         expect(classNames(
-            'someClass',
+            "someClass",
             {},
-            ['class1', 'class2'],
+            ["class1", "class2"],
         ))
-            .toBe('someClass class1 class2');
+            .toBe("someClass class1 class2");
     });
 
-    test('with mods and additional classes', () => {
+    test("with mods and additional classes", () => {
         expect(classNames(
-            'someClass',
+            "someClass",
             { hovered: true, scrollable: true },
-            ['class1', 'class2'],
+            ["class1", "class2"],
         ))
-            .toBe('someClass class1 class2 hovered scrollable');
+            .toBe("someClass class1 class2 hovered scrollable");
     });
 
-    test('with some mods false', () => {
+    test("with some mods false", () => {
         expect(classNames(
-            'someClass',
+            "someClass",
             { hovered: true, scrollable: false },
-            ['class1', 'class2'],
+            ["class1", "class2"],
         ))
-            .toBe('someClass class1 class2 hovered');
+            .toBe("someClass class1 class2 hovered");
     });
 
-    test('with mods undefined', () => {
+    test("with mods undefined", () => {
         expect(classNames(
-            'someClass',
+            "someClass",
             { hovered: true, scrollable: undefined },
-            ['class1', 'class2'],
+            ["class1", "class2"],
         ))
-            .toBe('someClass class1 class2 hovered');
+            .toBe("someClass class1 class2 hovered");
     });
 });

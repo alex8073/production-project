@@ -1,8 +1,8 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { Select } from 'shared/ui/Select/Select';
-import { memo, useCallback } from 'react';
-import { Country } from 'entities/Country';
+import { classNames } from "shared/lib/classNames/classNames";
+import { useTranslation } from "react-i18next";
+import { Select } from "shared/ui/Select/Select";
+import { memo, useCallback } from "react";
+import { Country } from "entities/Country";
 
 interface ICountrySelectProps {
     className?: string;
@@ -33,8 +33,8 @@ export const CountrySelect = memo((props: ICountrySelectProps) => {
 
     return (
         <Select
-            className={classNames('', { }, [className])}
-            label={t('Select country')}
+            className={classNames("", { }, [className])}
+            label={t("Select country")}
             options={options}
             value={value}
             onChange={onChangeHandler}

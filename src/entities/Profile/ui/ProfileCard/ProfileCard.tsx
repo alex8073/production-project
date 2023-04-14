@@ -1,15 +1,15 @@
-import { classNames, IMods } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
-import { Input } from 'shared/ui/Input/Input';
-import { Loader } from 'shared/ui/Loader/Loader';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Currency } from 'entities/Currency/model/types/currency';
-import { CurrencySelect } from 'entities/Currency';
-import { Country } from 'entities/Country/model/types/country';
-import { CountrySelect } from 'entities/Country';
-import cls from './ProfileCard.module.scss';
-import { IProfile } from '../../types/profile';
+import { classNames, IMods } from "shared/lib/classNames/classNames";
+import { useTranslation } from "react-i18next";
+import { Text, TextAlign, TextTheme } from "shared/ui/Text/Text";
+import { Input } from "shared/ui/Input/Input";
+import { Loader } from "shared/ui/Loader/Loader";
+import { Avatar } from "shared/ui/Avatar/Avatar";
+import { Currency } from "entities/Currency/model/types/currency";
+import { CurrencySelect } from "entities/Currency";
+import { Country } from "entities/Country/model/types/country";
+import { CountrySelect } from "entities/Country";
+import { IProfile } from "../../model/types/profile";
+import cls from "./ProfileCard.module.scss";
 
 interface IProfileCardProps {
     className?: string;
@@ -43,7 +43,7 @@ export const ProfileCard = (props: IProfileCardProps) => {
         onChangeCurrency,
         onChangeCountry,
     } = props;
-    const { t } = useTranslation('profile');
+    const { t } = useTranslation("profile");
 
     if (isLoading) {
         return (
@@ -58,8 +58,8 @@ export const ProfileCard = (props: IProfileCardProps) => {
             <div className={classNames(cls.ProfileCard, { }, [cls.error, className])}>
                 <Text
                     theme={TextTheme.ERROR}
-                    title={t('Profile loading error')}
-                    text={t('Try to reload page')}
+                    title={t("Profile loading error")}
+                    text={t("Try to reload page")}
                     align={TextAlign.CENTER}
                 />
             </div>
@@ -81,47 +81,47 @@ export const ProfileCard = (props: IProfileCardProps) => {
                 )}
                 <Input
                     value={data?.firstName}
-                    placeholder={t('Name')}
+                    placeholder={t("Name")}
                     className={cls.input}
                     onChange={onChangeFirstName}
                     readOnly={readOnly}
                 />
                 <Input
                     value={data?.lastName}
-                    placeholder={t('Surname')}
+                    placeholder={t("Surname")}
                     className={cls.input}
                     onChange={onChangeLastName}
                     readOnly={readOnly}
                 />
                 <Input
                     value={data?.age}
-                    placeholder={t('Age')}
+                    placeholder={t("Age")}
                     className={cls.input}
                     onChange={onChangeAge}
                     readOnly={readOnly}
                     onKeyDown={(e) => {
-                        if (!/[0-9]/.test(e.key) && e.key !== 'Backspace') {
+                        if (!/[0-9]/.test(e.key) && e.key !== "Backspace") {
                             e.preventDefault();
                         }
                     }}
                 />
                 <Input
                     value={data?.city}
-                    placeholder={t('City')}
+                    placeholder={t("City")}
                     className={cls.input}
                     onChange={onChangeCity}
                     readOnly={readOnly}
                 />
                 <Input
                     value={data?.username}
-                    placeholder={t('Username')}
+                    placeholder={t("Username")}
                     className={cls.input}
                     onChange={onChangeUsername}
                     readOnly={readOnly}
                 />
                 <Input
                     value={data?.avatar}
-                    placeholder={t('Avatar')}
+                    placeholder={t("Avatar")}
                     className={cls.input}
                     onChange={onChangeAvatar}
                     readOnly={readOnly}

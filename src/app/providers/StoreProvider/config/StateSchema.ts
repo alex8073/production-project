@@ -1,13 +1,13 @@
-import { CombinedState, Dispatch } from 'redux';
+import { CombinedState, Dispatch } from "redux";
 import {
     AnyAction, EnhancedStore, Reducer, ReducersMapObject,
-} from '@reduxjs/toolkit';
-import { ICounterSchema } from 'entities/Counter';
-import { IUserSchema } from 'entities/User';
-import { ILoginSchema } from 'features/AuthByUsername';
-import { IProfileSchema } from 'entities/Profile';
-import { AxiosInstance } from 'axios';
-import { NavigateOptions, To } from 'react-router-dom';
+} from "@reduxjs/toolkit";
+import { ICounterSchema } from "entities/Counter";
+import { IUserSchema } from "entities/User";
+import { ILoginSchema } from "features/AuthByUsername";
+import { IProfileSchema } from "entities/Profile";
+import { AxiosInstance } from "axios";
+import { NavigateOptions, To } from "react-router-dom";
 
 export interface IStateSchema {
     counter: ICounterSchema;

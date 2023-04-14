@@ -1,13 +1,13 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from "shared/lib/classNames/classNames";
 import {
     memo, useCallback, useState,
-} from 'react';
-import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { LoginModal } from 'features/AuthByUsername';
-import { getUserAuthData, userActions } from 'entities/User';
-import { useDispatch, useSelector } from 'react-redux';
-import cls from './NavBar.module.scss';
+} from "react";
+import { useTranslation } from "react-i18next";
+import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { LoginModal } from "features/AuthByUsername";
+import { getUserAuthData, userActions } from "entities/User";
+import { useDispatch, useSelector } from "react-redux";
+import cls from "./NavBar.module.scss";
 
 interface INavBarProps {
   className?: string;
@@ -33,7 +33,7 @@ export const NavBar = memo(({ className }: INavBarProps) => {
                     className={cls.links}
                     onClick={onLogOut}
                 >
-                    {t('Log out')}
+                    {t("Log out")}
                 </Button>
             </div>
         );
@@ -46,7 +46,7 @@ export const NavBar = memo(({ className }: INavBarProps) => {
                 className={cls.links}
                 onClick={onOpenModal}
             >
-                {t('Log in')}
+                {t("Log in")}
             </Button>
 
             {isAuthModal && (

@@ -12,5 +12,10 @@
   "Select currency": "Select currency",
   "Select country": "Select country",
   "Profile loading error": "Profile loading error",
-  "Try to reload page": "Try to reload page"
+  "Try to reload page": "Try to reload page",
+  "Server error": "Server error",
+  "No data": "No data",
+  "Data required": "Data required",
+  "Incorrect age": "Incorrect age",
+  "Incorrect country": "Incorrect country"
 }

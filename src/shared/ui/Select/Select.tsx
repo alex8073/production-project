@@ -1,9 +1,8 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
+import { classNames } from "shared/lib/classNames/classNames";
 import {
     ChangeEvent, memo, useCallback, useMemo,
-} from 'react';
-import cls from './Select.module.scss';
+} from "react";
+import cls from "./Select.module.scss";
 
 interface ISelectOption {
     value: string;
@@ -20,7 +19,6 @@ interface ISelectProps {
 }
 
 export const Select = memo((props: ISelectProps) => {
-    const { t } = useTranslation();
     const {
         className,
         label,
