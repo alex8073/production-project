@@ -3,6 +3,9 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecrator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import { Country } from "entities/Country";
+import { Currency } from "entities/Currency";
+import AvatarImage from "shared/assets/tests/picture.jpg";
 import ProfilePage from "./ProfilePage";
 
 export default {
@@ -13,17 +16,42 @@ export default {
     },
 } as ComponentMeta<typeof ProfilePage>;
 
-// @ts-ignore
 const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
 
-export const Light = Template.bind({});
-Light.args = {};
-Light.decorators = [StoreDecorator({
-    profile: { isLoading: false, readOnly: true },
+export const LightDefault = Template.bind({});
+LightDefault.args = {};
+LightDefault.decorators = [StoreDecorator({
+    profile: {
+        form: {
+            firstName: "John",
+            lastName: "Miller",
+            username: "Godzilla",
+            country: Country.RUSSIA,
+            age: 745,
+            currency: Currency.RUB,
+            city: "Moscow",
+            avatar: AvatarImage,
+        },
+        isLoading: false,
+        readOnly: true,
+    },
 })];
 
 export const Dark = Template.bind({});
 Dark.args = {};
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    profile: { isLoading: false, readOnly: true },
+    profile: {
+        form: {
+            firstName: "John",
+            lastName: "Miller",
+            username: "Godzilla",
+            country: Country.RUSSIA,
+            age: 745,
+            currency: Currency.RUB,
+            city: "Moscow",
+            avatar: AvatarImage,
+        },
+        isLoading: false,
+        readOnly: true,
+    },
 })];
