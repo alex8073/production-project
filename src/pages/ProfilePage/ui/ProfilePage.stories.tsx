@@ -3,6 +3,8 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecrator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import { Country } from "entities/Country";
+import { Currency } from "entities/Currency";
 import ProfilePage from "./ProfilePage";
 
 export default {
@@ -13,17 +15,42 @@ export default {
     },
 } as ComponentMeta<typeof ProfilePage>;
 
-// @ts-ignore
 const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
 
-export const Light = Template.bind({});
-Light.args = {};
-Light.decorators = [StoreDecorator({
-    profile: { isLoading: false, readOnly: true },
+export const LightDefault = Template.bind({});
+LightDefault.args = {};
+LightDefault.decorators = [StoreDecorator({
+    profile: {
+        form: {
+            firstName: "John",
+            lastName: "Miller",
+            username: "Godzilla",
+            country: Country.RUSSIA,
+            age: 745,
+            currency: Currency.RUB,
+            city: "Moscow",
+            avatar: "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg",
+        },
+        isLoading: false,
+        readOnly: true,
+    },
 })];
 
 export const Dark = Template.bind({});
 Dark.args = {};
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    profile: { isLoading: false, readOnly: true },
+    profile: {
+        form: {
+            firstName: "John",
+            lastName: "Miller",
+            username: "Godzilla",
+            country: Country.RUSSIA,
+            age: 745,
+            currency: Currency.RUB,
+            city: "Moscow",
+            avatar: "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg",
+        },
+        isLoading: false,
+        readOnly: true,
+    },
 })];
