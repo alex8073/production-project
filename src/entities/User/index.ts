@@ -7,3 +7,4 @@ export {
     IUserSchema,
 } from "./model/types/user";
 export { getUserAuthData } from "./model/selectors/getUserAuthData/getUserAuthData";
+export { getUserInitialized } from "./model/selectors/getUserInitialized/getUserInitialized";
