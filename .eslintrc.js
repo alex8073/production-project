@@ -45,7 +45,7 @@ module.exports = {
         "@typescript-eslint/no-unused-vars": "off",
         "react/jsx-props-no-spreading": "off",
         "i18next/no-literal-string": [
-            "error",
+            "warn",
             {
                 markupOnly: true,
                 ignoreAttribute: ["data-testid", "to"],
