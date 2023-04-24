@@ -8,6 +8,7 @@ import { ILoginSchema } from "features/AuthByUsername";
 import { IProfileSchema } from "entities/Profile";
 import { AxiosInstance } from "axios";
 import { NavigateOptions, To } from "react-router-dom";
+import { IArticleDetailsSchema } from "entities/Article";
 
 export interface IStateSchema {
     counter: ICounterSchema;
@@ -16,6 +17,7 @@ export interface IStateSchema {
     // Асинхронные редьюсеры
     loginForm?: ILoginSchema;
     profile?: IProfileSchema;
+    articleDetails?: IArticleDetailsSchema;
 }
 
 export type IStateSchemaKey = keyof IStateSchema;
