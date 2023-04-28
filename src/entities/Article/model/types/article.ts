@@ -8,6 +8,7 @@ export interface IArticleBlockBase {
     id: string;
     type: ArticleBlockType;
 }
+
 export interface IArticleBlockCode extends IArticleBlockBase {
     type: ArticleBlockType.CODE
     code: string;
