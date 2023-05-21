@@ -8,12 +8,12 @@ import { CommentList } from "entities/Comment";
 import { DynamicModuleLoader, IReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useDispatch, useSelector } from "react-redux";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { AddCommentForm } from "features/AddCommentForm";
+import { Loader } from "shared/ui/Loader/Loader";
+import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
 import {
     fetchCommentsByArticleId,
-} from "pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
-import { AddCommentForm } from "features/AddCommentForm";
-import { addCommentForArticle } from "pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle";
-import { Loader } from "shared/ui/Loader/Loader";
+} from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { articleDetailsCommentsReducer, getArticleComments } from "../../model/slice/articleDetailsCommentsSlice";
 import cls from "./ArticleDetailsPage.module.scss";
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
