@@ -9,3 +9,5 @@ export type {
 export type {
     IArticle,
 } from "./model/types/article";
+
+export { getArticleDetailsData } from "./model/selectors/articleDetails";

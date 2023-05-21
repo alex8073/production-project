@@ -18,5 +18,7 @@
   "Login form": "Форма авторизации",
   "Incorrect login or password": "Неверный логин или пароль",
   "Profile": "Профиль",
-  "There are no comments": "Комментарии отсутствуют"
+  "There are no comments": "Комментарии отсутствуют",
+  "Enter comment text": "Введите текст комментария",
+  "Send": "Отправить"
 }

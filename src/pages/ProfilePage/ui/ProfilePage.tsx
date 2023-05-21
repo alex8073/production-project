@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
-import { memo, useCallback, useEffect } from "react";
+import { memo, useCallback } from "react";
 import { DynamicModuleLoader, IReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {
     fetchProfileData,
@@ -10,7 +10,8 @@ import {
     getProfileValidationErrors,
     profileActions,
     ProfileCard,
-    profileReducer, ValidateProfileError,
+    profileReducer,
+    ValidateProfileError,
 } from "entities/Profile";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
@@ -18,6 +19,8 @@ import { getProfileForm } from "entities/Profile/model/selectors/getProfileForm/
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country/model/types/country";
 import { Text, TextTheme } from "shared/ui/Text/Text";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useParams } from "react-router-dom";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 interface IProfilePageProps {
@@ -35,6 +38,7 @@ const ProfilePage = memo(({ className }: IProfilePageProps) => {
     const isLoading = useSelector(getProfileLoading);
     const readOnly = useSelector(getProfileReadOnly);
     const validationErrors = useSelector(getProfileValidationErrors);
+    const { id } = useParams<{id: string}>();
 
     const validateErrorsTranslate = {
         [ValidateProfileError.SERVER_ERROR]: t("Server error"),
@@ -44,11 +48,11 @@ const ProfilePage = memo(({ className }: IProfilePageProps) => {
         [ValidateProfileError.INCORRECT_COUNTRY]: t("Incorrect country"),
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== "storybook") {
-            dispatch(fetchProfileData());
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     const onChangeFirstName = useCallback((value: string) => {
         dispatch(profileActions.updateProfile({ firstName: value }));
@@ -83,7 +87,7 @@ const ProfilePage = memo(({ className }: IProfilePageProps) => {
     }, [dispatch]);
 
     return (
-        <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
+        <DynamicModuleLoader reducers={initialReducers}>
             <div className={classNames("", {}, [className])}>
                 <ProfilePageHeader />
 

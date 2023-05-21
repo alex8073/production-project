@@ -10,6 +10,7 @@ import { AxiosInstance } from "axios";
 import { NavigateOptions, To } from "react-router-dom";
 import { IArticleDetailsSchema } from "entities/Article";
 import { IArticleDetailsCommentSchema } from "pages/ArticleDetailsPage";
+import { IAddCommentFormSchema } from "features/AddCommentForm";
 
 export interface IStateSchema {
     counter: ICounterSchema;
@@ -20,6 +21,7 @@ export interface IStateSchema {
     profile?: IProfileSchema;
     articleDetails?: IArticleDetailsSchema;
     articleDetailsComments?: IArticleDetailsCommentSchema;
+    addCommentForm?: IAddCommentFormSchema;
 }
 
 export type IStateSchemaKey = keyof IStateSchema;

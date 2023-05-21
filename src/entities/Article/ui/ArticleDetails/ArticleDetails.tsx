@@ -12,6 +12,7 @@ import CalendarIcon from "shared/assets/icons/calendar.svg";
 import { ArticleCodeBlockComponent } from "entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleImageBlockComponents } from "entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponents";
 import { ArticleTextBlockComponent } from "entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
 import {
     getArticleDetailsData,
@@ -49,11 +50,11 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
         }
     }, []);
 
-    useEffect(() => {
-        if (__PROJECT__ !== "storybook") {
+    useInitialEffect(() => {
+        if (id) {
             dispatch(fetchArticleById(id));
         }
-    }, [dispatch, id]);
+    });
 
     let content;
 
@@ -102,7 +103,7 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
     }
 
     return (
-        <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
+        <DynamicModuleLoader reducers={initialReducers}>
             <div className={classNames(cls.ArticleDetails, {}, [className])}>
                 {content}
             </div>

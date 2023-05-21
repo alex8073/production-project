@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
-import { memo } from "react";
+import { memo, Suspense, useCallback } from "react";
 import { ArticleDetails } from "entities/Article";
 import { Text } from "shared/ui/Text/Text";
 import { useParams } from "react-router-dom";
@@ -11,6 +11,9 @@ import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEf
 import {
     fetchCommentsByArticleId,
 } from "pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+import { AddCommentForm } from "features/AddCommentForm";
+import { addCommentForArticle } from "pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle";
+import { Loader } from "shared/ui/Loader/Loader";
 import { articleDetailsCommentsReducer, getArticleComments } from "../../model/slice/articleDetailsCommentsSlice";
 import cls from "./ArticleDetailsPage.module.scss";
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
@@ -31,6 +34,10 @@ const ArticleDetailsPage = (props: IArticleDetailsPageProps) => {
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
 
+    const onSendComment = useCallback((text: string) => {
+        dispatch(addCommentForArticle(text));
+    }, [dispatch]);
+
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
     });
@@ -44,10 +51,13 @@ const ArticleDetailsPage = (props: IArticleDetailsPageProps) => {
     }
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+        <DynamicModuleLoader reducers={reducers}>
             <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <ArticleDetails id={id} />
                 <Text className={cls.commentsTitle} title={t("Comments")} />
+                <Suspense fallback={<Loader />}>
+                    <AddCommentForm onSendComment={onSendComment} />
+                </Suspense>
                 <CommentList
                     isLoading={commentsIsLoading}
                     comments={comments}
