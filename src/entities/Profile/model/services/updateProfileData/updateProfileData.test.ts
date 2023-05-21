@@ -6,6 +6,7 @@ import { IStateSchema } from "app/providers/StoreProvider";
 import { updateProfileData } from "./updateProfileData";
 
 const data = {
+    id: "1",
     firstName: "John",
     lastName: "Miller",
     username: "Godzilla",
