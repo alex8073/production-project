@@ -11,3 +11,5 @@ export type {
 } from "./model/types/article";
 
 export { getArticleDetailsData } from "./model/selectors/articleDetails";
+
+export { ArticleListView } from "./model/types/article";

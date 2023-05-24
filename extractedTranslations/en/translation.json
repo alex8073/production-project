@@ -7,6 +7,7 @@
   "Article not found": "Article not found",
   "Atricle not found": "Atricle not found",
   "Avatar": "Avatar",
+  "Back to list": "Back to list",
   "Cancel": "Cancel",
   "City": "City",
   "Comments": "Comments",
@@ -30,6 +31,13 @@
   "Profile": "Profile",
   "Profile Page": "Profile Page",
   "Profile loading error": "Profile loading error",
+  "Read more": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
   "Refresh the page": "Refresh the page",
   "Save": "Save",
   "Select country": "",
