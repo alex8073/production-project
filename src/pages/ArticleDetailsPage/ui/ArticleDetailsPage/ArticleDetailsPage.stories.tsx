@@ -28,6 +28,11 @@ const article: IArticle = {
     img: "https://teknotower.com/wp-content/uploads/2020/11/js.png",
     views: 1022,
     createdAt: "26.02.2022",
+    user: {
+        id: "1",
+        username: "Bob",
+        avatar: "https://webmg.ru/wp-content/uploads/2022/11/i-76-44.jpeg",
+    },
     type: [ArticleType.IT],
     blocks: [
         {
