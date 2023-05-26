@@ -13,3 +13,5 @@ export type {
 export { getArticleDetailsData } from "./model/selectors/articleDetails";
 
 export { ArticleListView } from "./model/types/article";
+
+export { ArticleListViewSelector } from "./ui/ArticleListViewSelector/ArticleListViewSelector";

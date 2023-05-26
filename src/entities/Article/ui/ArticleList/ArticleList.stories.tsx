@@ -90,18 +90,18 @@ const article = {
     ],
 } as IArticle;
 
-export const GridViewDefault = Template.bind({});
-GridViewDefault.args = {
+export const TileViewDefault = Template.bind({});
+TileViewDefault.args = {
     isLoading: false,
     articles: new Array(16).fill(0).map((item, i) => ({ ...article, id: `${i}` })),
-    view: ArticleListView.GRID,
+    view: ArticleListView.TILE,
 };
 
-export const GridViewLoading = Template.bind({});
-GridViewLoading.args = {
+export const TileViewLoading = Template.bind({});
+TileViewLoading.args = {
     isLoading: true,
     articles: [],
-    view: ArticleListView.GRID,
+    view: ArticleListView.TILE,
 };
 
 export const ListViewDefault = Template.bind({});

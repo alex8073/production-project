@@ -90,9 +90,9 @@ const article = {
     ],
 } as IArticle;
 
-export const GridViewDefault = Template.bind({});
-GridViewDefault.args = {
-    view: ArticleListView.GRID,
+export const TileViewDefault = Template.bind({});
+TileViewDefault.args = {
+    view: ArticleListView.TILE,
     article,
 };
 

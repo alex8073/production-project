@@ -1,5 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import { ArticleListView } from "entities/Article";
 import ArticlesPage from "./ArticlesPage";
 
 export default {
@@ -14,3 +16,8 @@ const Template: ComponentStory<typeof ArticlesPage> = (args) => <ArticlesPage {.
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.decorators = [StoreDecorator({
+    articlesPage: {
+        view: ArticleListView.TILE,
+    },
+})];
