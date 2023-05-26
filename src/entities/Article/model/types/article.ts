@@ -37,7 +37,7 @@ export enum ArticleType {
 }
 export enum ArticleListView {
     LIST = "LIST",
-    GRID = "GRID",
+    TILE = "TILE",
 }
 
 export interface IArticle {
