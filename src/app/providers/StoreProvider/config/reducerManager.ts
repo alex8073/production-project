@@ -1,7 +1,9 @@
 import {
     AnyAction, combineReducers, Reducer, ReducersMapObject,
 } from "@reduxjs/toolkit";
-import { IReducerManager, IStateSchema, IStateSchemaKey } from "./StateSchema";
+import {
+    IMountedReducers, IReducerManager, IStateSchema, IStateSchemaKey,
+} from "./StateSchema";
 
 export function createReducerManager(initialReducers: ReducersMapObject<IStateSchema>): IReducerManager {
     const reducers = { ...initialReducers };
@@ -9,9 +11,11 @@ export function createReducerManager(initialReducers: ReducersMapObject<IStateSc
     let combinedReducer = combineReducers(reducers);
 
     let keysToRemove: IStateSchemaKey[] = [];
+    const mountedReducers: IMountedReducers = {};
 
     return {
         getReducerMap: () => reducers,
+        getMountedReducers: () => mountedReducers,
         reduce: (state: IStateSchema, action: AnyAction) => {
             if (keysToRemove.length > 0) {
                 state = { ...state };
@@ -27,6 +31,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<IStateSc
                 return;
             }
             reducers[key] = reducer;
+            mountedReducers[key] = true;
             combinedReducer = combineReducers(reducers);
         },
         remove: (key: IStateSchemaKey) => {
@@ -35,6 +40,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<IStateSc
             }
             delete reducers[key];
             keysToRemove.push(key);
+            mountedReducers[key] = false;
             combinedReducer = combineReducers(reducers);
         },
     };
