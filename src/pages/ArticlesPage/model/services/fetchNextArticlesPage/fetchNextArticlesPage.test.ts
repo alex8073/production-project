@@ -16,6 +16,7 @@ describe("fetchNextArticlesPage.test", () => {
                 isLoading: false,
                 hasMore: true,
                 view: ArticleListView.LIST,
+                _inited: false,
             },
         });
 
@@ -34,6 +35,7 @@ describe("fetchNextArticlesPage.test", () => {
                 isLoading: false,
                 hasMore: false,
                 view: ArticleListView.LIST,
+                _inited: false,
             },
         });
 
@@ -52,6 +54,7 @@ describe("fetchNextArticlesPage.test", () => {
                 isLoading: true,
                 hasMore: true,
                 view: ArticleListView.LIST,
+                _inited: false,
             },
         });
 

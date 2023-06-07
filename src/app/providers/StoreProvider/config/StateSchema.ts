@@ -7,7 +7,6 @@ import { IUserSchema } from "entities/User";
 import { ILoginSchema } from "features/AuthByUsername";
 import { IProfileSchema } from "entities/Profile";
 import { AxiosInstance } from "axios";
-import { NavigateOptions, To } from "react-router-dom";
 import { IArticleDetailsSchema } from "entities/Article";
 import { IArticleDetailsCommentSchema } from "pages/ArticleDetailsPage";
 import { IAddCommentFormSchema } from "features/AddCommentForm";
@@ -27,12 +26,15 @@ export interface IStateSchema {
 }
 
 export type IStateSchemaKey = keyof IStateSchema;
+export type IMountedReducers = OptionalRecord<IStateSchemaKey, boolean>;
 
 export interface IReducerManager {
     getReducerMap: ()=> ReducersMapObject<IStateSchema>;
     reduce: (state: IStateSchema, action: AnyAction) => CombinedState<IStateSchema>;
     add: (key: IStateSchemaKey, reducer: Reducer) => void;
     remove: (key: IStateSchemaKey) => void;
+    // true - вмонтирован, false - демонтирован
+    getMountedReducers: () => IMountedReducers;
 }
 
 export interface IReduxStoreWithManager extends EnhancedStore<IStateSchema>{
@@ -41,7 +43,6 @@ export interface IReduxStoreWithManager extends EnhancedStore<IStateSchema>{
 
 export interface IThunkExtraArg {
     api: AxiosInstance;
-    navigate?: (to: To, options?: NavigateOptions) => void,
 }
 
 export interface IThunkConfig<T> {
