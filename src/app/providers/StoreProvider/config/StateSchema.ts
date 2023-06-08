@@ -11,10 +11,12 @@ import { IArticleDetailsSchema } from "entities/Article";
 import { IArticleDetailsCommentSchema } from "pages/ArticleDetailsPage";
 import { IAddCommentFormSchema } from "features/AddCommentForm";
 import { IArticlePageSchema } from "pages/ArticlesPage";
+import { IScrollSaverSchema } from "features/ScrollSaver";
 
 export interface IStateSchema {
     counter: ICounterSchema;
     user: IUserSchema;
+    scrollSaver: IScrollSaverSchema;
 
     // Асинхронные редьюсеры
     loginForm?: ILoginSchema;
