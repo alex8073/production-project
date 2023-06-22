@@ -1,4 +1,17 @@
 {
   "About us": "О нас",
-  "Read more...": "Читать далее..."
+  "Read more...": "Читать далее...",
+  "Sort by": "Сортировать по",
+  "Search": "Поиск",
+  "ascending": "возрастанию",
+  "descending": "убыванию",
+  "by": "по",
+  "creation date": "дате создания",
+  "title": "названию",
+  "views": "просмотрам",
+  "All": "Все",
+  "IT": "АйТи",
+  "Economics": "Экономика",
+  "Science": "Наука",
+  "Articles not found": "Статьи не найдены"
 }

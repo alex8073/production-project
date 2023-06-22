@@ -1,4 +1,17 @@
 {
   "About us": "About us",
-  "Read more...": "Read more..."
+  "Read more...": "Read more...",
+  "Sort by": "Sort by",
+  "Search": "Search",
+  "ascending": "ascending",
+  "descending": "descending",
+  "by": "by",
+  "creation date": "creation date",
+  "title": "title",
+  "views": "views",
+  "All": "All",
+  "IT": "IT",
+  "Economics": "Economics",
+  "Science": "Science",
+  "Articles not found": "Articles not found"
 }
