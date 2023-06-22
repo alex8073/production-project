@@ -127,11 +127,11 @@
   "articles": [
     {
       "id": "1",
-      "title": "Javascript news",
+      "title": "Javascript news СВЕЖАЯ",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 5555,
+      "createdAt": "01.02.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -183,11 +183,11 @@
       "title": " Breaking Javascript news",
       "subtitle": "Что нового в JS за 1995 год?",
       "img": "https://i.pinimg.com/originals/a9/ac/a2/a9aca2f4501163a0820d59e0236d2bc8.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 789,
+      "createdAt": "02.08.2023",
       "userId": "1",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -234,10 +234,10 @@
     {
       "id": "3",
       "title": "TypeScript",
-      "subtitle": "Что нового в TypeScript?",
+      "subtitle": "Что нового в TypeScript за 2012?",
       "img": "https://i.de-vraag.com/communities/telegram/typescript_ru.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 126,
+      "createdAt": "12.12.2012",
       "userId": "1",
       "type": [
         "IT"
@@ -287,13 +287,13 @@
     {
       "id": "4",
       "title": "TypeScript",
-      "subtitle": "Что нового в TypeScript?",
+      "subtitle": "Что нового в 2020?",
       "img": "https://mobimg.b-cdn.net/v3/fetch/4a/4af0bcc2b0c34fd573eca9f1be9ab245.jpeg?w=1470&r=0.5625",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 543,
+      "createdAt": "25.01.2020",
       "userId": "1",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -340,13 +340,13 @@
     {
       "id": "5",
       "title": "TypeScript",
-      "subtitle": "Что нового в TypeScript?",
+      "subtitle": "TypeScript 2022",
       "img": "https://mobimg.b-cdn.net/v3/fetch/4a/4af0bcc2b0c34fd573eca9f1be9ab245.jpeg?w=1470&r=0.5625",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 365,
+      "createdAt": "22.10.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "IT", "ECONOMICS"
       ],
       "blocks": [
         {
@@ -393,13 +393,13 @@
     {
       "id": "6",
       "title": "TypeScript",
-      "subtitle": "Что нового в TypeScript?",
+      "subtitle": "Программа, которую по традиции называют «Hello, world!",
       "img": "https://mobimg.b-cdn.net/v3/fetch/bb/bb7247f233cd427b110a8df290c7fc2e.jpeg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 235,
+      "createdAt": "10.11.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "IT", "ECONOMICS"
       ],
       "blocks": [
         {
@@ -448,11 +448,11 @@
       "title": "TypeScript",
       "subtitle": "Что нового в TypeScript?",
       "img": "https://mobimg.b-cdn.net/v3/fetch/f3/f321ddc1f47b23aaa4830f1f76e893b5.jpeg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 333,
+      "createdAt": "22.12.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "IT", "SCIENCE"
       ],
       "blocks": [
         {
@@ -499,13 +499,13 @@
     {
       "id": "8",
       "title": "TypeScript",
-      "subtitle": "Что нового в TypeScript?",
+      "subtitle": "Способы запуска JS-кода",
       "img": "https://www.sunhome.ru/i/wallpapers/221/frukti-oboi.orig.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 77,
+      "createdAt": "05.06.2023",
       "userId": "1",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -554,11 +554,11 @@
       "title": "TypeScript",
       "subtitle": "Что нового в TypeScript?",
       "img": "https://mobimg.b-cdn.net/v3/fetch/ef/effb2f7eb99603d2cb16bdb11eebf1e3.jpeg",
-      "views": 1022,
+      "views": 5568,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -607,7 +607,7 @@
       "title": "TypeScript",
       "subtitle": "Что нового в TypeScript?",
       "img": "https://get.wallhere.com/photo/1680x1050-px-butterfly-1648305.jpg",
-      "views": 1022,
+      "views": 111,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -660,7 +660,7 @@
       "title": "TypeScript",
       "subtitle": "Что нового в TypeScript?",
       "img": "https://mobimg.b-cdn.net/v3/fetch/d4/d409498e03af418b323011f4545fe116.jpeg",
-      "views": 1022,
+      "views": 365,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -713,11 +713,11 @@
       "title": "TypeScript",
       "subtitle": "Что нового в TypeScript?",
       "img": "https://mobimg.b-cdn.net/v3/fetch/60/60b05e1e1307312c653cfe8c183f6e0d.jpeg?w=1470&r=0.5625",
-      "views": 1022,
+      "views": 698,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "IT", "SCIENCE"
       ],
       "blocks": [
         {
@@ -766,7 +766,7 @@
       "title": "TypeScript",
       "subtitle": "Что нового в TypeScript?",
       "img": "https://fanibani.ru/images/wp-content/uploads/2021/09/137-8.jpg",
-      "views": 1022,
+      "views": 87,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -819,7 +819,7 @@
       "title": "TypeScript",
       "subtitle": "Что нового в TypeScript?",
       "img": "https://mobimg.b-cdn.net/v3/fetch/d6/d6f08996a3ad1681f7b4721647073e1a.jpeg?w=1470&r=0.5625",
-      "views": 1022,
+      "views": 225,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -872,7 +872,7 @@
       "title": "TypeScript",
       "subtitle": "Что нового в TypeScript?",
       "img": "https://mobimg.b-cdn.net/v3/fetch/ab/abd88cc5572d695fd4eb967c518080f1.jpeg",
-      "views": 1022,
+      "views": 965,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -925,7 +925,7 @@
       "title": "TypeScript",
       "subtitle": "Что нового в TypeScript?",
       "img": "https://mobimg.b-cdn.net/v3/fetch/dd/dd1e9dd0f6f574a32280a8e21fe7c4c6.jpeg",
-      "views": 1022,
+      "views": 895,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -978,7 +978,7 @@
       "title": "TypeScript",
       "subtitle": "Что нового в TypeScript?",
       "img": "https://mobimg.b-cdn.net/v3/fetch/5c/5c9b90fbc17a0297f754197f4b469f50.jpeg",
-      "views": 1022,
+      "views": 483,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -1031,7 +1031,7 @@
       "title": "TypeScript",
       "subtitle": "Что нового в TypeScript?",
       "img": "https://mobimg.b-cdn.net/v3/fetch/db/db445c388ae875ee3a45ce50edb1345c.jpeg",
-      "views": 1022,
+      "views": 663,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -1084,7 +1084,7 @@
       "title": "TypeScript",
       "subtitle": "Что нового в TypeScript?",
       "img": "https://mobimg.b-cdn.net/v3/fetch/07/07a5912517ee8e518442ba5631bf417f.jpeg?w=1470&r=0.5625",
-      "views": 1022,
+      "views": 5958,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -1137,7 +1137,7 @@
       "title": "TypeScript",
       "subtitle": "Что нового в TypeScript?",
       "img": "https://mobimg.b-cdn.net/v3/fetch/5a/5a93b0ff3aff2c7901a6088c27af2e20.jpeg",
-      "views": 1022,
+      "views": 456,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -1190,7 +1190,7 @@
       "title": "TypeScript",
       "subtitle": "Что нового в TypeScript?",
       "img": "https://mobimg.b-cdn.net/v3/fetch/6a/6ae2f7bac03ba9b4e4364dbf0ce6c6fe.jpeg",
-      "views": 1022,
+      "views": 451,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -1243,7 +1243,7 @@
       "title": "TypeScript",
       "subtitle": "Что нового в TypeScript?",
       "img": "https://mobimg.b-cdn.net/v3/fetch/09/094a99ab8e9132aa763c330917216aeb.jpeg",
-      "views": 1022,
+      "views": 231,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -1296,7 +1296,7 @@
       "title": "TypeScript",
       "subtitle": "Что нового в TypeScript?",
       "img": "https://mobimg.b-cdn.net/v3/fetch/1c/1c2337d3db45f03ff2bdbcc4bbe77c04.jpeg",
-      "views": 1022,
+      "views": 859,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -1349,7 +1349,7 @@
       "title": "TypeScript",
       "subtitle": "Что нового в TypeScript?",
       "img": "https://mobimg.b-cdn.net/v3/fetch/69/69fda0d934c9fbac7b3f341a553bd95e.jpeg",
-      "views": 1022,
+      "views": 988,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
