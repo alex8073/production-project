@@ -8,10 +8,11 @@ import { ILoginSchema } from "features/AuthByUsername";
 import { IProfileSchema } from "entities/Profile";
 import { AxiosInstance } from "axios";
 import { IArticleDetailsSchema } from "entities/Article";
-import { IArticleDetailsCommentSchema } from "pages/ArticleDetailsPage";
+import { IArticleDetailsCommentSchema, IArticleDetailsRecommendationsSchema } from "pages/ArticleDetailsPage";
 import { IAddCommentFormSchema } from "features/AddCommentForm";
 import { IArticlePageSchema } from "pages/ArticlesPage";
 import { IScrollSaverSchema } from "features/ScrollSaver";
+import { IArticleDetailsPageSchema } from "pages/ArticleDetailsPage/model/types";
 
 export interface IStateSchema {
     counter: ICounterSchema;
@@ -22,9 +23,9 @@ export interface IStateSchema {
     loginForm?: ILoginSchema;
     profile?: IProfileSchema;
     articleDetails?: IArticleDetailsSchema;
-    articleDetailsComments?: IArticleDetailsCommentSchema;
     addCommentForm?: IAddCommentFormSchema;
     articlesPage?: IArticlePageSchema;
+    articleDetailsPage?: IArticleDetailsPageSchema;
 }
 
 export type IStateSchemaKey = keyof IStateSchema;
