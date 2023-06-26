@@ -122,6 +122,12 @@
       "userId": "1",
       "text": "ну ка еще один коммент",
       "id": "kjJ6Sq6"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "12333",
+      "id": "-pB0rKK"
     }
   ],
   "articles": [
@@ -346,7 +352,8 @@
       "createdAt": "22.10.2022",
       "userId": "1",
       "type": [
-        "IT", "ECONOMICS"
+        "IT",
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -399,7 +406,8 @@
       "createdAt": "10.11.2022",
       "userId": "1",
       "type": [
-        "IT", "ECONOMICS"
+        "IT",
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -452,7 +460,8 @@
       "createdAt": "22.12.2022",
       "userId": "1",
       "type": [
-        "IT", "SCIENCE"
+        "IT",
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -717,7 +726,8 @@
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT", "SCIENCE"
+        "IT",
+        "SCIENCE"
       ],
       "blocks": [
         {
