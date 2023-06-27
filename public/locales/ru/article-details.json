@@ -2,6 +2,9 @@
     "Article not found": "Статья не найдена",
     "Article loading error": "Ошибка загрузки статьи",
     "Back to list": "Назад к списку",
+    "Edit": "Редактировать",
+    "Edit article with ID = ": "Редактирование статьи с ID = ",
+    "Create new article": "Создание новой статьи",
     "Comments": "Комментарии",
     "Recommendations": "Рекомендации"
 }
