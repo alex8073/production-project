@@ -1,10 +1,10 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { HTMLAttributeAnchorTarget, memo } from "react";
-import { ArticleListItemSkeleton } from "entities/Article/ui/ArticleListItem/ArticleListItemSkeleton";
 import { useTranslation } from "react-i18next";
 import { Text } from "shared/ui/Text/Text";
 import { List, ListRowProps, WindowScroller } from "react-virtualized";
 import { PAGE_ID } from "widgets/Page";
+import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
 import { ArticleListView, IArticle } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import cls from "./ArticleList.module.scss";

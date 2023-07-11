@@ -2,7 +2,7 @@ import {
     ReactNode, MouseEvent, useState, useRef, useEffect, useCallback,
 } from "react";
 import { classNames, IMods } from "shared/lib/classNames/classNames";
-import { Portal } from "shared/ui/Portal/Portal";
+import { Portal } from "../Portal/Portal";
 import cls from "./Modal.module.scss";
 
 interface IModalProps {

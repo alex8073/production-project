@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect } from "react";
+import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
@@ -9,10 +9,10 @@ import { Skeleton } from "shared/ui/Skeleton/Skeleton";
 import { Avatar } from "shared/ui/Avatar/Avatar";
 import EyeIcon from "shared/assets/icons/eye.svg";
 import CalendarIcon from "shared/assets/icons/calendar.svg";
-import { ArticleCodeBlockComponent } from "entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent";
-import { ArticleImageBlockComponents } from "entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponents";
-import { ArticleTextBlockComponent } from "entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
+import { ArticleImageBlockComponents } from "../ArticleImageBlockComponent/ArticleImageBlockComponents";
+import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
 import {
     getArticleDetailsData,

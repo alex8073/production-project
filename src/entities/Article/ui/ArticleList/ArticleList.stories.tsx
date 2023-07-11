@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { ArticleListView, IArticle } from "entities/Article";
+import { ArticleListView, IArticle } from "../../model/types/article";
 import { ArticleList } from "./ArticleList";
 
 export default {
