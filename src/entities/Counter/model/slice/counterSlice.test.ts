@@ -1,5 +1,5 @@
-import { counterReducer, ICounterSchema } from "entities/Counter";
-import { counterActions } from "./counterSlice";
+import { ICounterSchema } from "../types/counterSchema";
+import { counterActions, counterReducer } from "./counterSlice";
 
 describe("counterSlice", () => {
     test("counterSlice increment", () => {

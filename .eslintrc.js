@@ -20,6 +20,7 @@ module.exports = {
         "@typescript-eslint",
         "i18next",
         "react-hooks",
+        "path-checker-fsd-stable",
     ],
     rules: {
         indent: [2, 4],
@@ -66,6 +67,7 @@ module.exports = {
         "linebreak-style": "off",
         "no-undef": "off",
         "react/no-array-index-key": "off",
+        "path-checker-fsd-stable/path-checker": "error",
     },
     globals: {
         __IS_DEV__: true,

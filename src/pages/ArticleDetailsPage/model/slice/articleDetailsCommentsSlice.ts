@@ -3,7 +3,7 @@ import { IComment } from "entities/Comment";
 import { IStateSchema } from "app/providers/StoreProvider";
 import {
     fetchCommentsByArticleId,
-} from "pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+} from "../services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { IArticleDetailsCommentSchema } from "../types/articleDetailsCommentSchema";
 
 const commentsAdapter = createEntityAdapter<IComment>({

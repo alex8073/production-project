@@ -1,10 +1,9 @@
-import {
-    IProfile, IProfileSchema, updateProfileData, ValidateProfileError,
-} from "entities/Profile";
 import { Country } from "entities/Country";
 import { Currency } from "entities/Currency";
 import { DeepPartial } from "@reduxjs/toolkit";
 import { profileActions, profileReducer } from "./profileSlice";
+import { IProfile, IProfileSchema, ValidateProfileError } from "../types/profile";
+import { updateProfileData } from "../services/updateProfileData/updateProfileData";
 
 const data: IProfile = {
     firstName: "John",
