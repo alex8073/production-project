@@ -6,6 +6,7 @@ import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { DynamicModuleLoader, IReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { HStack } from "shared/ui/Stack";
 import { addCommentFormActions, addCommentFormReducer } from "../../model/slices/addCommentFormSlice";
 import { gatAddCommentFormText, getAddCommentFormError } from "../../model/selectors/addCommentFormSelectors";
 import cls from "./AddCommentForm.module.scss";
@@ -36,7 +37,7 @@ const AddCommentForm = memo((props: IAddCommentFormProps) => {
 
     return (
         <DynamicModuleLoader reducers={initialReducers}>
-            <div className={classNames(cls.AddCommentForm, {}, [className])}>
+            <HStack max gap="16" className={classNames(cls.AddCommentForm, {}, [className])}>
                 <Input
                     placeholder={t("Enter comment text")}
                     value={text}
@@ -49,7 +50,7 @@ const AddCommentForm = memo((props: IAddCommentFormProps) => {
                 >
                     {t("Send")}
                 </Button>
-            </div>
+            </HStack>
         </DynamicModuleLoader>
     );
 });

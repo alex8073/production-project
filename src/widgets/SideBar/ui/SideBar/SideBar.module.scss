@@ -11,10 +11,6 @@
     position: absolute;
     bottom: 20px;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
 }
 
 .collapseBtn {
@@ -25,9 +21,6 @@
 
 .items {
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
 }
 
 .collapsed {
