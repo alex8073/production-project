@@ -5,6 +5,7 @@ import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import { useSelector } from "react-redux";
+import { HStack, VStack } from "shared/ui/Stack";
 import { getSidebarItems } from "../../model/selectors/getSidebarItems";
 import { SidebarItem } from "../SidebarItem/SidebarItem";
 import cls from "./SideBar.module.scss";
@@ -38,14 +39,14 @@ export const SideBar = memo(({ className }: ISideBarProps) => {
                 className,
             ])}
         >
-            <div className={cls.items}>
+            <VStack className={cls.items} gap="16">
                 {sidebarItems}
-            </div>
+            </VStack>
 
-            <div className={cls.switchers}>
+            <HStack gap="16" justify="center" align="center" className={cls.switchers}>
                 <ThemeSwitcher className="changePosition" />
                 <LangSwitcher short={collapsed} />
-            </div>
+            </HStack>
 
             <Button
                 data-testid="sidebar-toggle"
