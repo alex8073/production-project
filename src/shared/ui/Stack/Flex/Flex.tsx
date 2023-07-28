@@ -1,7 +1,5 @@
 import { classNames, IMods } from "shared/lib/classNames/classNames";
-import {
-    DetailedHTMLProps, HTMLAttributes, memo, ReactNode,
-} from "react";
+import { HTMLAttributes, memo, ReactNode } from "react";
 import cls from "./Flex.module.scss";
 
 export type IFlexJustify = "start" | "center" | "end" | "between";
@@ -34,9 +32,7 @@ const gapClasses: Record<IFlexGap, string> = {
     32: cls.gap32,
 };
 
-type IDivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
-
-export interface IFlexProps extends IDivProps {
+export interface IFlexProps extends HTMLAttributes<HTMLElement> {
     className?: string;
     children: ReactNode;
     justify?: IFlexJustify;
