@@ -49,7 +49,7 @@ module.exports = {
             "warn",
             {
                 markupOnly: true,
-                ignoreAttribute: ["data-testid", "to", "target", "direction", "justify", "align", "gap"],
+                ignoreAttribute: ["data-testid", "to", "target", "direction", "justify", "align", "gap", "role"],
             },
         ],
         "max-len": [
