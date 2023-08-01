@@ -8,6 +8,8 @@ import { getUserAuthData, userActions } from "entities/User";
 import { useDispatch, useSelector } from "react-redux";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import { Dropdown } from "shared/ui/Dropdown/Dropdown";
+import { Avatar } from "shared/ui/Avatar/Avatar";
 import cls from "./NavBar.module.scss";
 
 interface INavBarProps {
@@ -40,13 +42,20 @@ export const NavBar = memo(({ className }: INavBarProps) => {
                 >
                     {t("Create article")}
                 </AppLink>
-                <Button
-                    theme={ButtonTheme.CLEAR_INVERTED}
-                    className={cls.links}
-                    onClick={onLogOut}
-                >
-                    {t("Log out")}
-                </Button>
+                <Dropdown
+                    direction="bottomLeft"
+                    className={cls.dropdown}
+                    trigger={(
+                        <Avatar
+                            size={30}
+                            src={authData.avatar}
+                        />
+                    )}
+                    items={[
+                        { content: t("User profile"), href: RoutePath.profile + authData.id },
+                        { content: t("Log out"), onClick: onLogOut },
+                    ]}
+                />
             </header>
         );
     }

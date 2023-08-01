@@ -1,6 +1,7 @@
 import { Fragment, ReactNode } from "react";
 import { Listbox as HListbox } from "@headlessui/react";
 import { classNames } from "shared/lib/classNames/classNames";
+import { IDropdownDirection } from "shared/types/ui";
 import { Button } from "../Button/Button";
 import { HStack } from "../Stack";
 import cls from "./ListBox.module.scss";
@@ -10,8 +11,6 @@ export interface IListBoxItem<T extends string> {
     content: ReactNode;
     disabled?: boolean;
 }
-
-type IDropdownDirection = "top" | "bottom";
 
 export interface IListBoxProps<T extends string> {
     items?: IListBoxItem<T>[];
@@ -32,7 +31,7 @@ export function ListBox<T extends string>(props: IListBoxProps<T>) {
         onChange,
         className,
         readOnly,
-        direction = "bottom",
+        direction = "bottomRight",
         label,
     } = props;
 
