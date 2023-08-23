@@ -5,19 +5,20 @@ import {
 import { ICounterSchema } from "entities/Counter";
 import { IUserSchema } from "entities/User";
 import { ILoginSchema } from "features/AuthByUsername";
-import { IProfileSchema } from "entities/Profile";
 import { AxiosInstance } from "axios";
 import { IArticleDetailsSchema } from "entities/Article";
-import { IArticleDetailsCommentSchema, IArticleDetailsRecommendationsSchema } from "pages/ArticleDetailsPage";
 import { IAddCommentFormSchema } from "features/AddCommentForm";
 import { IArticlePageSchema } from "pages/ArticlesPage";
 import { IScrollSaverSchema } from "features/ScrollSaver";
 import { IArticleDetailsPageSchema } from "pages/ArticleDetailsPage/model/types";
+import { rtkApi } from "shared/api/rtkApi";
+import { IProfileSchema } from "features/EditableProfileCard";
 
 export interface IStateSchema {
     counter: ICounterSchema;
     user: IUserSchema;
     scrollSaver: IScrollSaverSchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>,
 
     // Асинхронные редьюсеры
     loginForm?: ILoginSchema;

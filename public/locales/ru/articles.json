@@ -13,5 +13,6 @@
   "IT": "АйТи",
   "Economics": "Экономика",
   "Science": "Наука",
-  "Articles not found": "Статьи не найдены"
+  "Articles not found": "Статьи не найдены",
+  "Article list loading error": "Ошибка загрузки статей"
 }

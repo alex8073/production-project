@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
-import { memo, useCallback, useMemo } from "react";
+import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import {
     ArticleListView, ArticleListViewSelector, ArticleSortField, ArticleSortSelector, ArticleType, ArticleTypeTabs,
@@ -10,7 +10,7 @@ import { Card } from "shared/ui/Card/Card";
 import { Input } from "shared/ui/Input/Input";
 import { ISortOrder } from "shared/types";
 import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce";
-import { ITabItem, Tabs } from "shared/ui/Tabs/Tabs";
+import { HStack, VStack } from "shared/ui/Stack";
 import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
 import {
     getArticlePageOrder,
@@ -19,7 +19,6 @@ import {
     getArticlePageView,
 } from "../../model/selectors/articlePageSelectors";
 import { articlePageActions } from "../../model/slice/articlePageSlice";
-import cls from "./ArticlesPageFilters.module.scss";
 
 interface IArticlesPageFiltersProps {
     className?: string;
@@ -70,8 +69,8 @@ export const ArticlesPageFilters = memo((props: IArticlesPageFiltersProps) => {
     }, [dispatch, fetchData]);
 
     return (
-        <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
-            <div className={cls.sortWrapper}>
+        <VStack gap="16" max className={classNames("", {}, [className])}>
+            <HStack max justify="between">
                 <ArticleSortSelector
                     sort={sort}
                     order={order}
@@ -82,7 +81,8 @@ export const ArticlesPageFilters = memo((props: IArticlesPageFiltersProps) => {
                     view={view}
                     onViewClick={onChangeView}
                 />
-            </div>
+            </HStack>
+
             <Card>
                 <Input
                     placeholder={t("Search")}
@@ -90,10 +90,11 @@ export const ArticlesPageFilters = memo((props: IArticlesPageFiltersProps) => {
                     onChange={onChangeSearch}
                 />
             </Card>
+
             <ArticleTypeTabs
                 value={type}
                 onChangeType={onChangeType}
             />
-        </div>
+        </VStack>
     );
 });
