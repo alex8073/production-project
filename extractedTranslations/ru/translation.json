@@ -5,6 +5,7 @@
   "Age": "Age",
   "All": "All",
   "An unexpected error has occurred": "An unexpected error has occurred",
+  "Article list loading error": "Article list loading error",
   "Article loading error": "Article loading error",
   "Article not found": "Article not found",
   "Articles not found": "Articles not found",
@@ -39,6 +40,7 @@
   "Profile": "Profile",
   "Profile Page": "Profile Page",
   "Profile loading error": "Profile loading error",
+  "Profile not found": "Profile not found",
   "Read more": {
     "": {
       "": {
