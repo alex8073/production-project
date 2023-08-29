@@ -5,10 +5,9 @@ import { ReducersMapObject } from "@reduxjs/toolkit";
 import { IStateSchema } from "../config/StateSchema";
 
 interface IStoreProviderProps {
-  children?: ReactNode;
-  initialState?: DeepPartial<IStateSchema>;
-  asyncReducers?: DeepPartial<ReducersMapObject<IStateSchema>>
-
+    children?: ReactNode;
+    initialState?: DeepPartial<IStateSchema>;
+    asyncReducers?: DeepPartial<ReducersMapObject<IStateSchema>>
 }
 
 export const StoreProvider = (props: IStoreProviderProps) => {
