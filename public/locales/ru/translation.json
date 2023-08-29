@@ -19,7 +19,11 @@
   "Login form": "Форма авторизации",
   "Incorrect login or password": "Неверный логин или пароль",
   "Profile": "Профиль",
+  "Articles": "Статьи",
   "There are no comments": "Комментарии отсутствуют",
   "Enter comment text": "Введите текст комментария",
-  "Send": "Отправить"
+  "Send": "Отправить",
+  "Admin panel": "Панель администратора",
+  "Create article": "Создать статью",
+  "Ulbi TV App": "Приложение Ульби ТВ"
 }

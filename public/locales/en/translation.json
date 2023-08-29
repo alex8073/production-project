@@ -19,7 +19,11 @@
   "Login form": "Login form",
   "Incorrect login or password": "Incorrect login or password",
   "Profile": "Profile",
+  "Articles": "Articles",
   "There are no comments": "There are no comments",
   "Enter comment text": "Enter comment text",
-  "Send": "Send"
+  "Send": "Send",
+  "Admin panel": "Admin panel",
+  "Create article": "Create article",
+  "Ulbi TV App": "Ulbi TV App"
 }
