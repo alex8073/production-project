@@ -36,7 +36,7 @@ export const ArticleDetailsComments = memo((props: IArticleDetailsCommentsProps)
     }, [dispatch]);
 
     return (
-        <VStack gap="16" className={classNames("", {}, [className])}>
+        <VStack gap="16" max className={classNames("", {}, [className])}>
             <Text
                 title={t("Comments")}
             />
