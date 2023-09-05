@@ -8,6 +8,7 @@ import { Avatar } from "shared/ui/Avatar/Avatar";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { AppLink } from "shared/ui/AppLink/AppLink";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import { ARTICLE_LIST_ITEM_ID } from "shared/const/localStorage";
 import {
     ArticleBlockType, ArticleListView, IArticle, IArticleBlockText,
 } from "../../model/types/article";
@@ -19,11 +20,12 @@ interface IArticleListItemProps {
     article: IArticle;
     view: ArticleListView;
     target?: HTMLAttributeAnchorTarget;
+    index: number;
 }
 
 export const ArticleListItem = memo((props: IArticleListItemProps) => {
     const {
-        className, article, view, target,
+        className, article, view, target, index,
     } = props;
     const { t } = useTranslation("articles");
 
@@ -35,6 +37,10 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
         </>
     );
 
+    const handleButtonClick = () => {
+        sessionStorage.setItem(ARTICLE_LIST_ITEM_ID, JSON.stringify(index));
+    };
+
     if (view === ArticleListView.LIST) {
         const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as IArticleBlockText;
 
@@ -42,8 +48,8 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
             <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
                 <Card>
                     <div className={cls.header}>
-                        <Avatar size={30} src={article.user.avatar} />
-                        <Text text={article.user.username} className={cls.username} />
+                        <Avatar size={30} src={article.user?.avatar} />
+                        <Text text={article.user?.username} className={cls.username} />
                         <Text text={article.createdAt} className={cls.date} />
                     </div>
 
@@ -59,7 +65,7 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
                             target={target}
                             to={RoutePath.article_details + article.id}
                         >
-                            <Button theme={ButtonTheme.OUTLINE}>
+                            <Button theme={ButtonTheme.OUTLINE} onClick={handleButtonClick}>
                                 {t("Read more...")}
                             </Button>
                         </AppLink>
@@ -76,6 +82,7 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
             target={target}
             to={RoutePath.article_details + article.id}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+            onClick={handleButtonClick}
         >
             <Card>
                 <div className={cls.imageWrapper}>
