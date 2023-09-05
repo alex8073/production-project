@@ -63,12 +63,12 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
         content = (
             <>
                 <HStack max justify="center">
-                    <Skeleton className={cls.avatar} width={200} height={200} border="50%" />
+                    <Skeleton width={200} height={200} border="50%" />
                 </HStack>
-                <Skeleton className={cls.title} width={300} height={32} />
-                <Skeleton className={cls.skeleton} width={600} height={24} />
-                <Skeleton className={cls.skeleton} width="100%" height={200} />
-                <Skeleton className={cls.skeleton} width="100%" height={200} />
+                <Skeleton width={300} height={32} />
+                <Skeleton width={600} height={24} />
+                <Skeleton width="100%" height={200} />
+                <Skeleton width="100%" height={200} />
             </>
         );
     } else if (error) {
@@ -80,7 +80,6 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
                     <Avatar
                         size={200}
                         src={article?.img}
-                        className={cls.avatar}
                     />
                 </HStack>
                 <VStack gap="4" max>
@@ -88,7 +87,6 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
                         title={article?.title}
                         text={article?.subtitle}
                         size={TextSize.L}
-                        className={cls.title}
                     />
                     <HStack gap="8">
                         <EyeIcon />
