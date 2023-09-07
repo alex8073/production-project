@@ -51,6 +51,7 @@ export const Flex = memo((props: IFlexProps) => {
         direction = "row",
         gap,
         max,
+        ...rest
     } = props;
 
     const classes = [
@@ -66,7 +67,7 @@ export const Flex = memo((props: IFlexProps) => {
     };
 
     return (
-        <div className={classNames(cls.Flex, mods, classes)}>
+        <div className={classNames(cls.Flex, mods, classes)} {...rest}>
             {children}
         </div>
     );

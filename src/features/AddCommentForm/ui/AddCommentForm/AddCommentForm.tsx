@@ -8,7 +8,7 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { DynamicModuleLoader, IReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { HStack } from "shared/ui/Stack";
 import { addCommentFormActions, addCommentFormReducer } from "../../model/slices/addCommentFormSlice";
-import { gatAddCommentFormText, getAddCommentFormError } from "../../model/selectors/addCommentFormSelectors";
+import { gatAddCommentFormText } from "../../model/selectors/addCommentFormSelectors";
 import cls from "./AddCommentForm.module.scss";
 
 export interface IAddCommentFormProps {
@@ -22,11 +22,10 @@ const AddCommentForm = memo((props: IAddCommentFormProps) => {
     const { className, onSendComment } = props;
     const { t } = useTranslation();
     const text = useSelector(gatAddCommentFormText);
-    const error = useSelector(getAddCommentFormError);
 
     const dispatch = useAppDispatch();
 
-    const onCommentTextChange = useCallback((value) => {
+    const onCommentTextChange = useCallback((value: string) => {
         dispatch(addCommentFormActions.setText(value));
     }, [dispatch]);
 

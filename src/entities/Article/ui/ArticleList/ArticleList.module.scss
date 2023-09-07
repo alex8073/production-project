@@ -1,21 +1,42 @@
 .ArticleList {
+    width: 100%;
+    height: 100%;
     display: flex;
-    gap: 30px;
-}
-
-.TILE {
+    gap: 16px;
     flex-wrap: wrap;
-
-    .card {
-        display: inline-flex;
-    }
-
-    .row {
-        display: flex;
-        gap: 30px;
-    }
 }
 
 .LIST {
-    flex-flow: column nowrap;
+    .card {
+        margin-bottom: 32px;
+        margin-right: 24px;
+    }
+}
+
+.itemsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px;
+    padding-right: 16px;
+}
+
+.skeleton {
+    padding-bottom: 30px;
+}
+
+.ItemContainer {
+    width: 230px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+
+    @media (max-width: 1024px) {
+        width: 50%;
+    }
+
+    @media (max-width: 300px) {
+        width: 100%;
+    }
 }
