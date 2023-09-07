@@ -21,9 +21,9 @@ interface IArticleListProps {
     onLoadNextPart?: () => void;
 }
 
-const getSkeletons = () => new Array(3)
+const getSkeletons = (view: ArticleListView) => new Array(view === ArticleListView.TILE ? 9 : 3)
     .fill(0)
-    .map((_, index) => <ArticleListItemSkeleton key={index} view={ArticleListView.LIST} className={cls.card} />);
+    .map((_, index) => <ArticleListItemSkeleton key={index} view={view} />);
 
 export const ArticleList = memo((props: IArticleListProps) => {
     const {
@@ -75,7 +75,7 @@ export const ArticleList = memo((props: IArticleListProps) => {
             if (isLoading) {
                 return (
                     <div className={cls.skeleton}>
-                        {getSkeletons()}
+                        {getSkeletons(ArticleListView.LIST)}
                     </div>
                 );
             }
@@ -148,6 +148,7 @@ export const ArticleList = memo((props: IArticleListProps) => {
                         />
                     ))
             }
+            {isLoading && getSkeletons(view)}
         </div>
     );
 });

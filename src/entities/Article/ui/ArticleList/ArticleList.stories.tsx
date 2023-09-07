@@ -95,6 +95,7 @@ TileViewDefault.args = {
     isLoading: false,
     articles: new Array(16).fill(0).map((item, i) => ({ ...article, id: `${i}` })),
     view: ArticleListView.TILE,
+    virtualized: false,
 };
 
 export const TileViewLoading = Template.bind({});
@@ -102,6 +103,7 @@ TileViewLoading.args = {
     isLoading: true,
     articles: [],
     view: ArticleListView.TILE,
+    virtualized: false,
 };
 
 export const ListViewDefault = Template.bind({});
@@ -109,6 +111,7 @@ ListViewDefault.args = {
     isLoading: false,
     articles: new Array(3).fill(0).map((item, i) => ({ ...article, id: `${i}` })),
     view: ArticleListView.LIST,
+    virtualized: false,
 };
 
 export const ListViewLoading = Template.bind({});
@@ -116,4 +119,5 @@ ListViewLoading.args = {
     isLoading: true,
     articles: [],
     view: ArticleListView.LIST,
+    virtualized: false,
 };
