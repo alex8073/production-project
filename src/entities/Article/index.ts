@@ -12,8 +12,6 @@ export type {
 
 export { getArticleDetailsData } from "./model/selectors/articleDetails";
 
-export { ArticleListView, ArticleSortField, ArticleType } from "./model/types/article";
-
 export { ArticleListViewSelector } from "./ui/ArticleListViewSelector/ArticleListViewSelector";
 
 export { ArticleList } from "./ui/ArticleList/ArticleList";
@@ -21,3 +19,4 @@ export { ArticleList } from "./ui/ArticleList/ArticleList";
 export { ArticleSortSelector } from "./ui/ArticleSortSelector/ArticleSortSelector";
 
 export { ArticleTypeTabs } from "./ui/ArticleTypeTabs/ArticleTypeTabs";
+export { ArticleListView, ArticleType, ArticleSortField } from "./model/const/consts";

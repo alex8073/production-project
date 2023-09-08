@@ -1,4 +1,3 @@
-import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -10,10 +9,10 @@ import { Country } from "entities/Country";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { DynamicModuleLoader, IReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { VStack } from "shared/ui/Stack";
+import { ValidateProfileError } from "../../model/consts/consts";
 import {
     EditableProfileCardHeader,
 } from "../EditableProfileCardHeader/EditableProfileCardHeader";
-import { ValidateProfileError } from "../../model/types/editableProfileCardSchema";
 import { getProfileLoading } from "../../model/selectors/getProfileLoading/getProfileLoading";
 import { getProfileReadOnly } from "../../model/selectors/getProfileReadOnly/getProfileReadOnly";
 import { getProfileValidationErrors } from "../../model/selectors/getProfileValidationErrors/getProfileValidationErrors";
