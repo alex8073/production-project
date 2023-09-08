@@ -9,7 +9,7 @@ export {
     createReduxStore,
     IStateSchema,
     IReduxStoreWithManager,
-    IAppDispatch,
     IThunkExtraArg,
     IThunkConfig,
 };
+export type { IAppDispatch };

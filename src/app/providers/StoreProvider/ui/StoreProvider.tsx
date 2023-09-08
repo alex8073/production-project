@@ -21,8 +21,6 @@ export const StoreProvider = (props: IStoreProviderProps) => {
         // navigate,
     );
 
-    console.log("Render");
-
     return (
         <Provider store={store}>
             {children}

@@ -11,6 +11,7 @@ import EyeIcon from "shared/assets/icons/eye.svg";
 import CalendarIcon from "shared/assets/icons/calendar.svg";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { HStack, VStack } from "shared/ui/Stack";
+import { ArticleBlockType } from "../../model/const/consts";
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleImageBlockComponents } from "../ArticleImageBlockComponent/ArticleImageBlockComponents";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
@@ -22,7 +23,7 @@ import {
 } from "../../model/selectors/articleDetails";
 import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
 import cls from "./ArticleDetails.module.scss";
-import { ArticleBlockType, IArticleBlock } from "../../model/types/article";
+import { IArticleBlock } from "../../model/types/article";
 
 interface IArticleDetailsProps {
     className?: string;
