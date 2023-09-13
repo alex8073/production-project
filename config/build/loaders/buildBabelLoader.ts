@@ -1,6 +1,12 @@
-export function buildBabelLoaders(isDev: boolean) {
+import { IBuildOptions } from "../types/config";
+
+interface IBuildBabelLoaderProps extends IBuildOptions {
+    isTsx: boolean;
+}
+
+export function buildBabelLoaders({ isDev, isTsx }: IBuildBabelLoaderProps) {
     return {
-        test: /\.(js|ts|jsx|tsx)$/,
+        test: isTsx ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,
         exclude: /node_modules/,
         use: {
             loader: "babel-loader",
@@ -14,6 +20,13 @@ export function buildBabelLoaders(isDev: boolean) {
                             keyAsDefaultValue: true,
                         },
                     ],
+                    [
+                        "@babel/plugin-transform-typescript",
+                        {
+                            isTsx,
+                        },
+                    ],
+                    "@babel/plugin-transform-runtime",
                     isDev && require.resolve("react-refresh/babel"),
                 ].filter(Boolean),
             },

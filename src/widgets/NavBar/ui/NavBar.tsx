@@ -12,13 +12,13 @@ import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { Dropdown } from "shared/ui/Dropdown/Dropdown";
 import { Avatar } from "shared/ui/Avatar/Avatar";
-import cls from "./NavBar.module.scss";
+import cls from "./Navbar.module.scss";
 
-interface INavBarProps {
+interface INavbarProps {
   className?: string;
 }
 
-export const NavBar = memo(({ className }: INavBarProps) => {
+export const Navbar = memo(({ className }: INavbarProps) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState<boolean>(false);
     const authData = useSelector(getUserAuthData);
@@ -36,7 +36,7 @@ export const NavBar = memo(({ className }: INavBarProps) => {
 
     if (authData) {
         return (
-            <header className={classNames(cls.NavBar, {}, [className])}>
+            <header className={classNames(cls.Navbar, {}, [className])}>
                 <Text
                     className={cls.appName}
                     title={t("Ulbi TV App")}
@@ -68,7 +68,7 @@ export const NavBar = memo(({ className }: INavBarProps) => {
     }
 
     return (
-        <header className={classNames(cls.NavBar, {}, [className])}>
+        <header className={classNames(cls.Navbar, {}, [className])}>
             <Button
                 theme={ButtonTheme.CLEAR_INVERTED}
                 className={cls.links}

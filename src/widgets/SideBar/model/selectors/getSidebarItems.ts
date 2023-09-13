@@ -10,7 +10,7 @@ import { ISidebarItem } from "../types/sidebar";
 export const getSidebarItems = createSelector(
     getUserAuthData,
     (userData) => {
-        const sideBarItemsList: ISidebarItem[] = [
+        const sidebarItemsList: ISidebarItem[] = [
             {
                 path: RoutePath.main,
                 text: "Main page",
@@ -25,7 +25,7 @@ export const getSidebarItems = createSelector(
         ];
 
         if (userData) {
-            sideBarItemsList.push(
+            sidebarItemsList.push(
                 {
                     path: RoutePath.profile + userData.id,
                     text: "Profile",
@@ -41,6 +41,6 @@ export const getSidebarItems = createSelector(
             );
         }
 
-        return sideBarItemsList;
+        return sidebarItemsList;
     },
 );
