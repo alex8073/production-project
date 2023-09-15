@@ -1,4 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
 import { classNames } from "shared/lib/classNames/classNames";
 import { memo, useMemo, useState } from "react";
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
@@ -8,13 +7,13 @@ import { useSelector } from "react-redux";
 import { HStack, VStack } from "shared/ui/Stack";
 import { getSidebarItems } from "../../model/selectors/getSidebarItems";
 import { SidebarItem } from "../SidebarItem/SidebarItem";
-import cls from "./SideBar.module.scss";
+import cls from "./Sidebar.module.scss";
 
-interface ISideBarProps {
+interface ISidebarProps {
   className?: string;
 }
 
-export const SideBar = memo(({ className }: ISideBarProps) => {
+export const Sidebar = memo(({ className }: ISidebarProps) => {
     const [collapsed, setCollapsed] = useState<boolean>(false);
     const sidebarItemsList = useSelector(getSidebarItems);
 
@@ -35,7 +34,7 @@ export const SideBar = memo(({ className }: ISideBarProps) => {
     return (
         <aside
             data-testid="sidebar"
-            className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [
+            className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
                 className,
             ])}
         >
