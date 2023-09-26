@@ -1,7 +1,7 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppRouter } from "app/providers/router";
-import { Navbar } from "widgets/Navnar";
-import { Sidebar } from "widgets/Sidenar";
+import { Navbar } from "widgets/Navbar";
+import { Sidebar } from "widgets/Sidebar";
 import React, { Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserInitialized, userActions } from "entities/User";
