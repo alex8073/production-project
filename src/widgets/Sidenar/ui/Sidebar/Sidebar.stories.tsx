@@ -4,17 +4,17 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecrator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import { Sidenar } from "./Sidenar";
+import { Sidebar } from "./Sidebar";
 
 export default {
     title: "widgets/Sidebar",
-    component: Sidenar,
+    component: Sidebar,
     argTypes: {
         backgroundColor: { control: "color" },
     },
-} as ComponentMeta<typeof Sidenar>;
+} as ComponentMeta<typeof Sidebar>;
 
-const Template: ComponentStory<typeof Sidenar> = (args) => <Sidenar {...args} />;
+const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />;
 
 export const LightWithAuth = Template.bind({});
 LightWithAuth.args = {};
