@@ -1,7 +1,7 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppRouter } from "app/providers/router";
 import { Navnar } from "widgets/Navbar";
-import { Sidebar } from "widgets/Sidebar";
+import { Sidenar } from "widgets/Sidebar";
 import React, { Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserInitialized, userActions } from "entities/User";
@@ -19,7 +19,7 @@ function App() {
             <Suspense fallback="">
                 <Navnar />
                 <div className="content-page">
-                    <Sidebar />
+                    <Sidenar />
                     {initialized && <AppRouter />}
                 </div>
             </Suspense>

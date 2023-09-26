@@ -7,13 +7,13 @@ import { useSelector } from "react-redux";
 import { HStack, VStack } from "shared/ui/Stack";
 import { getSidebarItems } from "../../model/selectors/getSidebarItems";
 import { SidebarItem } from "../SidebarItem/SidebarItem";
-import cls from "./Sidebar.module.scss";
+import cls from "./Sidenar.module.scss";
 
 interface ISidebarProps {
   className?: string;
 }
 
-export const Sidebar = memo(({ className }: ISidebarProps) => {
+export const Sidenar = memo(({ className }: ISidebarProps) => {
     const [collapsed, setCollapsed] = useState<boolean>(false);
     const sidebarItemsList = useSelector(getSidebarItems);
 
