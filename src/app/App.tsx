@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppRouter } from "app/providers/router";
-import { Navbar } from "widgets/Navbar";
+import { Navnar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
 import React, { Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,7 +17,7 @@ function App() {
     return (
         <div className={classNames("app", {}, [])}>
             <Suspense fallback="">
-                <Navbar />
+                <Navnar />
                 <div className="content-page">
                     <Sidebar />
                     {initialized && <AppRouter />}

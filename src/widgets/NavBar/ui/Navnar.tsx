@@ -12,13 +12,13 @@ import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { Dropdown } from "shared/ui/Dropdown/Dropdown";
 import { Avatar } from "shared/ui/Avatar/Avatar";
-import cls from "./Navbar.module.scss";
+import cls from "./Navnar.module.scss";
 
 interface INavbarProps {
   className?: string;
 }
 
-export const Navbar = memo(({ className }: INavbarProps) => {
+export const Navnar = memo(({ className }: INavbarProps) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState<boolean>(false);
     const authData = useSelector(getUserAuthData);
