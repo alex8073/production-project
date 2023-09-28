@@ -2,9 +2,10 @@ import { Fragment, ReactNode } from "react";
 import { Listbox as HListbox } from "@headlessui/react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { IDropdownDirection } from "shared/types/ui";
-import { Button } from "../Button/Button";
-import { HStack } from "../Stack";
+import { Button } from "../../../Button/Button";
+import { HStack } from "../../../Stack";
 import cls from "./ListBox.module.scss";
+import popupCls from "../../styles/popup.module.scss";
 
 export interface IListBoxItem<T extends string> {
     value: T;
@@ -36,7 +37,7 @@ export function ListBox<T extends string>(props: IListBoxProps<T>) {
     } = props;
 
     const optionsClasses = [
-        cls[direction],
+        popupCls[direction],
     ];
 
     return (
@@ -45,12 +46,12 @@ export function ListBox<T extends string>(props: IListBoxProps<T>) {
 
             <HListbox
                 as="div"
-                className={classNames(cls.ListBox, { }, [className])}
+                className={classNames(popupCls.popup, { }, [className])}
                 value={value}
                 onChange={onChange}
                 disabled={readOnly}
             >
-                <HListbox.Button disabled={readOnly} className={cls.trigger}>
+                <HListbox.Button disabled={readOnly} className={popupCls.trigger}>
                     <Button disabled={readOnly}>
                         {value ?? defaultValue}
                     </Button>
@@ -69,8 +70,8 @@ export function ListBox<T extends string>(props: IListBoxProps<T>) {
                                         classNames(
                                             cls.item,
                                             {
-                                                [cls.active]: active,
-                                                [cls.disabled]: item.disabled,
+                                                [popupCls.active]: active,
+                                                [popupCls.disabled]: item.disabled,
                                             },
                                             [],
                                         )

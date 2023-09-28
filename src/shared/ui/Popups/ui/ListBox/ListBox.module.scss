@@ -1,0 +1,20 @@
+.options {
+    position: absolute;
+    background: var(--listbox-bg);
+    z-index: 10000;
+    border-radius: 12px;
+    box-shadow: 4px 4px 8px var(--listbox-bg);
+    min-width: 100%;
+}
+
+.item {
+    padding: 10px 20px;
+
+    &:first-of-type {
+        border-radius: 12px 12px 0 0;
+    }
+
+    &:last-of-type {
+        border-radius: 0 0 12px 12px;
+    }
+}
