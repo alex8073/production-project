@@ -1,7 +1,6 @@
-import {
-    ReactNode, MouseEvent, useState, useRef, useEffect, useCallback,
-} from "react";
+import { ReactNode } from "react";
 import { classNames, IMods } from "shared/lib/classNames/classNames";
+import { useModal } from "shared/lib/hooks/useModal/useModal";
 import { Overlay } from "../Overlay/Overlay";
 import { Portal } from "../Portal/Portal";
 import cls from "./Modal.module.scss";
@@ -25,42 +24,7 @@ export const Modal = (props: IModalProps) => {
         lazy,
     } = props;
 
-    const [isClosing, setIsClosing] = useState<boolean>(false);
-    const [isMounted, setIsMounted] = useState<boolean>(false);
-    const timeRef = useRef<ReturnType<typeof setTimeout>>();
-
-    useEffect(() => {
-        if (isOpen) {
-            setIsMounted(true);
-        }
-    }, [isOpen]);
-
-    const closeHandler = useCallback(() => {
-        if (onClose) {
-            setIsClosing(true);
-            timeRef.current = setTimeout(() => {
-                onClose();
-                setIsClosing(false);
-            }, ANIMATION_DELAY);
-        }
-    }, [onClose]);
-
-    const onKeyDown = useCallback((e: KeyboardEvent) => {
-        if (e.key === "Escape") {
-            closeHandler();
-        }
-    }, [closeHandler]);
-
-    useEffect(() => {
-        if (isOpen) {
-            window.addEventListener("keydown", onKeyDown);
-        }
-
-        return () => {
-            clearTimeout(timeRef.current);
-            window.removeEventListener("keydown", onKeyDown);
-        };
-    }, [isOpen, onKeyDown]);
+    const { close, isClosing, isMounted } = useModal({ animationDelay: ANIMATION_DELAY, onClose, isOpen });
 
     const mods: IMods = {
         [cls.opened]: isOpen,
@@ -74,7 +38,7 @@ export const Modal = (props: IModalProps) => {
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [className])}>
-                <Overlay onClick={closeHandler} />
+                <Overlay onClick={close} />
 
                 <div className={cls.content}>
                     {children}
