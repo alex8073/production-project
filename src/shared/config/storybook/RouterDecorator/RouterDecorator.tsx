@@ -1,5 +1,5 @@
 import { Story, StoryContext } from "@storybook/react";
-import "app/styles/index.scss";
+import "@/app/styles/index.scss";
 import {
     BrowserRouter, MemoryRouter, Route, Routes,
 } from "react-router-dom";

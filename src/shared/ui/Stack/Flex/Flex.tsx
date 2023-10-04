@@ -1,5 +1,5 @@
-import { classNames, IMods } from "shared/lib/classNames/classNames";
 import { HTMLAttributes, memo, ReactNode } from "react";
+import { classNames, IMods } from "@/shared/lib/classNames/classNames";
 import cls from "./Flex.module.scss";
 
 export type IFlexJustify = "start" | "center" | "end" | "between";

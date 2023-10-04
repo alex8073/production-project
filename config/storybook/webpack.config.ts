@@ -8,7 +8,7 @@ export default ({ config }: {config: webpack.Configuration}) => {
         build: "",
         entry: "",
         html: "",
-        src: path.relative(__dirname, "../../src"),
+        src: path.resolve(__dirname, "../../src"),
         locales: "",
         buildLocales: "",
     };
@@ -34,6 +34,10 @@ export default ({ config }: {config: webpack.Configuration}) => {
         __API__: JSON.stringify("https://testapi.com"),
         __PROJECT__: JSON.stringify("storybook"),
     }));
+
+    config.resolve!.alias = {
+        "@": paths.src,
+    };
 
     return config;
 };

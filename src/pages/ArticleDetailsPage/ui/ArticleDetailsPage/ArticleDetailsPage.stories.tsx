@@ -1,9 +1,9 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { ArticleType, IArticle } from "entities/Article";
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
 import withMock from "storybook-addon-mock";
-import { ArticleBlockType } from "entities/Article/model/const/consts";
+import { ArticleType, IArticle } from "@/entities/Article";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import { ArticleBlockType } from "@/entities/Article/model/const/consts";
 import ArticleDetailsPage from "./ArticleDetailsPage";
 
 export default {
