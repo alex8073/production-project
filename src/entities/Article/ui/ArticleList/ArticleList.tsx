@@ -1,11 +1,11 @@
-import { classNames } from "shared/lib/classNames/classNames";
 import {
     HTMLAttributeAnchorTarget, memo, useCallback, useEffect, useMemo, useRef, useState,
 } from "react";
 import { useTranslation } from "react-i18next";
-import { Text } from "shared/ui/Text/Text";
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from "react-virtuoso";
-import { ARTICLE_LIST_ITEM_ID } from "shared/const/localStorage";
+import { Text } from "@/shared/ui/Text/Text";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { ARTICLE_LIST_ITEM_ID } from "@/shared/const/localStorage";
 import { ArticleListView } from "../../model/const/consts";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
 import { IArticle } from "../../model/types/article";

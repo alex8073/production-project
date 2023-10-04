@@ -2,17 +2,17 @@ import { CombinedState, Dispatch } from "redux";
 import {
     AnyAction, EnhancedStore, Reducer, ReducersMapObject,
 } from "@reduxjs/toolkit";
-import { ICounterSchema } from "entities/Counter";
-import { IUserSchema } from "entities/User";
-import { ILoginSchema } from "features/AuthByUsername";
 import { AxiosInstance } from "axios";
-import { IArticleDetailsSchema } from "entities/Article";
-import { IAddCommentFormSchema } from "features/AddCommentForm";
-import { IArticlePageSchema } from "pages/ArticlesPage";
-import { IScrollSaverSchema } from "features/ScrollSaver";
-import { IArticleDetailsPageSchema } from "pages/ArticleDetailsPage/model/types";
-import { rtkApi } from "shared/api/rtkApi";
-import { IProfileSchema } from "features/EditableProfileCard";
+import { ICounterSchema } from "@/entities/Counter";
+import { IUserSchema } from "@/entities/User";
+import { ILoginSchema } from "@/features/AuthByUsername";
+import { IArticleDetailsSchema } from "@/entities/Article";
+import { IAddCommentFormSchema } from "@/features/AddCommentForm";
+import { IArticlePageSchema } from "@/pages/ArticlesPage";
+import { IScrollSaverSchema } from "@/features/ScrollSaver";
+import { IArticleDetailsPageSchema } from "@/pages/ArticleDetailsPage/model/types";
+import { rtkApi } from "@/shared/api/rtkApi";
+import { IProfileSchema } from "@/features/EditableProfileCard";
 
 export interface IStateSchema {
     counter: ICounterSchema;

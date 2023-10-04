@@ -1,7 +1,7 @@
-import { Country } from "entities/Country";
-import { Currency } from "entities/Currency";
 import { DeepPartial } from "@reduxjs/toolkit";
-import { IProfile } from "entities/Profile";
+import { Country } from "@/entities/Country";
+import { Currency } from "@/entities/Currency";
+import { IProfile } from "@/entities/Profile";
 import { ValidateProfileError } from "../consts/consts";
 import { IProfileSchema } from "../types/editableProfileCardSchema";
 import { profileActions, profileReducer } from "./profileSlice";
