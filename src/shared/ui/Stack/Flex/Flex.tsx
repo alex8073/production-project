@@ -10,7 +10,7 @@ export type IFlexGap = "4" | "8" | "16" | "32";
 const justifyClasses: Record<IFlexJustify, string> = {
     start: cls.justifyStart,
     center: cls.justifyCenter,
-    end: cls.justifyStart,
+    end: cls.justifyEnd,
     between: cls.justifyBetween,
 };
 
