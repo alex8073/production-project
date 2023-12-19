@@ -2,4 +2,3 @@ export { EditableProfileCard } from "./ui/EditableProfileCard/EditableProfileCar
 export type { IProfileSchema } from "./model/types/editableProfileCardSchema";
 
 export { ValidateProfileError } from "./model/consts/consts";
-export { profileReducer } from "./model/slice/profileSlice";

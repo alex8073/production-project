@@ -68,7 +68,13 @@ module.exports = {
         "no-undef": "off",
         "react/no-array-index-key": "off",
         "path-checker-fsd-stable/path-checker": ["error", { alias: "@" }],
-        "path-checker-fsd-stable/public-api-imports": ["error", { alias: "@" }],
+        "path-checker-fsd-stable/public-api-imports": [
+            "error",
+            {
+                alias: "@",
+                testFilesPatterns: ["**/*.test.*", "**/*.story.*", "**/StoreDecorator.tsx"],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,

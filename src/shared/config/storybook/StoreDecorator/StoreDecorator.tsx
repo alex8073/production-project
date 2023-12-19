@@ -1,12 +1,12 @@
 import { Story } from "@storybook/react";
 import { ReducersMapObject } from "@reduxjs/toolkit";
 import { IStateSchema, StoreProvider } from "@/app/providers/StoreProvider";
-import { loginReducer } from "@/features/AuthByUsername";
 import { IReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { articleDetailsReducer } from "@/entities/Article";
-import { addCommentFormReducer } from "@/features/AddCommentForm";
-import { articleDetailsPageReducer } from "@/pages/ArticleDetailsPage";
-import { profileReducer } from "@/features/EditableProfileCard";
+import { loginReducer } from "@/features/AuthByUsername/testing";
+import { articleDetailsReducer } from "@/entities/Article/testing";
+import { addCommentFormReducer } from "@/features/AddCommentForm/testing";
+import { articleDetailsPageReducer } from "@/pages/ArticleDetailsPage/testing";
+import { profileReducer } from "@/features/EditableProfileCard/testing";
 
 const defaultAsyncReducers: IReducersList = {
     loginForm: loginReducer,
