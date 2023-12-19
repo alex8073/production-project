@@ -25,4 +25,3 @@ export {
     ArticleSortField,
     ArticleBlockType,
 } from "./model/const/consts";
-export { articleDetailsReducer } from "./model/slice/articleDetailsSlice";
