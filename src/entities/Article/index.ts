@@ -19,4 +19,10 @@ export { ArticleList } from "./ui/ArticleList/ArticleList";
 export { ArticleSortSelector } from "./ui/ArticleSortSelector/ArticleSortSelector";
 
 export { ArticleTypeTabs } from "./ui/ArticleTypeTabs/ArticleTypeTabs";
-export { ArticleListView, ArticleType, ArticleSortField } from "./model/const/consts";
+export {
+    ArticleListView,
+    ArticleType,
+    ArticleSortField,
+    ArticleBlockType,
+} from "./model/const/consts";
+export { articleDetailsReducer } from "./model/slice/articleDetailsSlice";

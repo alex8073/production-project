@@ -20,7 +20,7 @@ module.exports = {
         "@typescript-eslint",
         "i18next",
         "react-hooks",
-        "ulbi-tv-plugin",
+        "path-checker-fsd-stable",
     ],
     rules: {
         indent: [2, 4],
@@ -67,7 +67,8 @@ module.exports = {
         "linebreak-style": "off",
         "no-undef": "off",
         "react/no-array-index-key": "off",
-        "ulbi-tv-plugin/path-checker": ["error", { alias: "@" }],
+        "path-checker-fsd-stable/path-checker": ["error", { alias: "@" }],
+        "path-checker-fsd-stable/public-api-imports": ["error", { alias: "@" }],
     },
     globals: {
         __IS_DEV__: true,
