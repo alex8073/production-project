@@ -2,7 +2,7 @@ import { configureStore, ReducersMapObject } from "@reduxjs/toolkit";
 import { CombinedState, Reducer } from "redux";
 import { counterReducer } from "@/entities/Counter";
 import { userReducer } from "@/entities/User";
-import { createReducerManager } from "@/app/providers/StoreProvider/config/reducerManager";
+import { createReducerManager } from "./reducerManager";
 import { api } from "@/shared/api/api";
 import { scrollSaverReducer } from "@/features/ScrollSaver";
 import { rtkApi } from "@/shared/api/rtkApi";

@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecrator/ThemeDecorator";
-import { Theme } from "@/app/providers/ThemeProvider";
+import { Theme } from "@/shared/const/theme";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import { Country } from "@/entities/Country";
 import { Currency } from "@/entities/Currency";

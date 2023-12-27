@@ -1,4 +1,5 @@
 import { Story, StoryContext } from "@storybook/react";
+// eslint-disable-next-line path-checker-fsd-stable/layer-imports
 import "@/app/styles/index.scss";
 import {
     BrowserRouter, MemoryRouter, Route, Routes,
