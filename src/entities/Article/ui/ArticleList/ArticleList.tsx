@@ -3,7 +3,7 @@ import {
 } from "react";
 import { useTranslation } from "react-i18next";
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from "react-virtuoso";
-import { Text } from "@/shared/ui/Text/Text";
+import { Text } from "@/shared/ui/Text";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { ARTICLE_LIST_ITEM_ID } from "@/shared/const/localStorage";
 import { ArticleListView } from "../../model/const/consts";

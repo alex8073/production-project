@@ -2,7 +2,7 @@ import { memo } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import TileIcon from "@/shared/assets/icons/tile.svg";
 import ListIcon from "@/shared/assets/icons/list.svg";
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { ArticleListView } from "../../model/const/consts";
 import cls from "./ArticleListViewSelector.module.scss";
 
