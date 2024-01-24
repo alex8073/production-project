@@ -21,12 +21,14 @@ module.exports = {
         "i18next",
         "react-hooks",
         "path-checker-fsd-stable",
+        "unused-imports",
     ],
     rules: {
         indent: [2, 4],
         quotes: [2, "double", { avoidEscape: true }],
         "react/jsx-indent": [2, 4],
         "react/jsx-indent-props": [2, 4],
+        "unused-imports/no-unused-imports": "error",
         "react/jsx-filename-extension": [
             2,
             {
