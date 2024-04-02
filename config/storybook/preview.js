@@ -14,6 +14,14 @@ export const parameters = {
         },
     },
     layout: "fullscreen",
+    themes: {
+        default: "light",
+        list: [
+            { name: "light", class: Theme.LIGHT, color: "#ffffff" },
+            { name: "dark", class: Theme.DARK, color: "#000000" },
+            { name: "blue", class: Theme.BLUE, color: "#508afa" },
+        ],
+    },
 };
 
 addDecorator(SuspenseDecorator);
