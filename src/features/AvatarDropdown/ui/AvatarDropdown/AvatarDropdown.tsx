@@ -8,7 +8,7 @@ import {
     getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from "@/entities/User";
 import cls from "./AvatarDropdown.module.scss";
-import { RoutePath } from "@/shared/const/router";
+import { getRouteAdmin, getRouteProfile } from "@/shared/const/router";
 
 interface IAvatarDropdownProps {
     className?: string;
@@ -42,8 +42,8 @@ export const AvatarDropdown = memo((props: IAvatarDropdownProps) => {
                 />
             )}
             items={[
-                ...(isAdminPanelAvailable ? [{ content: t("Admin panel"), href: RoutePath.admin_panel }] : []),
-                { content: t("User profile"), href: RoutePath.profile + authData.id },
+                ...(isAdminPanelAvailable ? [{ content: t("Admin panel"), href: getRouteAdmin() }] : []),
+                { content: t("User profile"), href: getRouteProfile(authData.id) },
                 { content: t("Log out"), onClick: onLogOut },
             ]}
             className={classNames(cls.AvatarDropdown, {}, [className])}

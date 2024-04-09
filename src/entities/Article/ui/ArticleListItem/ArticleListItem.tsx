@@ -14,7 +14,7 @@ import {
 } from "../../model/types/article";
 import cls from "./ArticleListItem.module.scss";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
-import { RoutePath } from "@/shared/const/router";
+import { getRouteArticleDetails } from "@/shared/const/router";
 
 interface IArticleListItemProps {
     className?: string;
@@ -64,7 +64,7 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
                     <div className={cls.footer}>
                         <AppLink
                             target={target}
-                            to={RoutePath.article_details + article.id}
+                            to={getRouteArticleDetails(article.id)}
                         >
                             <Button theme={ButtonTheme.OUTLINE} onClick={handleButtonClick}>
                                 {t("Read more...")}
@@ -81,7 +81,7 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
     return (
         <AppLink
             target={target}
-            to={RoutePath.article_details + article.id}
+            to={getRouteArticleDetails(article.id)}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
             onClick={handleButtonClick}
         >
