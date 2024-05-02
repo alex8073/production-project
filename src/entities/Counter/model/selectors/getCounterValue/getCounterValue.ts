@@ -1,5 +1,3 @@
-import { createSelector } from "reselect";
-import { getCounter } from "../getCounter/getCounter";
-import { ICounterSchema } from "../../types/counterSchema";
+import { buildSelector } from "@/shared/lib/store";
 
-export const getCounterValue = createSelector(getCounter, (counter: ICounterSchema) => counter.value);
+export const [useCounterValue, getCounterValue] = buildSelector((state) => state.counter.value);
