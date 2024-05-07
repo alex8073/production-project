@@ -7,7 +7,7 @@ interface ILoaderProps {
 }
 
 export const Loader = memo(({ className }: ILoaderProps) => (
-    <div className={classNames("lds-spinner", {}, [className])}>
+    <div className={classNames("lds-spinner", {}, [className])} data-testid="Spinner">
         <div />
         <div />
         <div />

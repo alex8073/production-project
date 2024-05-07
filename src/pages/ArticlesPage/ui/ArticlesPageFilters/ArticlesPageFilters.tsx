@@ -8,7 +8,7 @@ import {
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Card } from "@/shared/ui/Card";
 import { Input } from "@/shared/ui/Input";
-import { ISortOrder } from "@/shared/types";
+import { ISortOrder } from "@/shared/types/sort";
 import { useDebounce } from "@/shared/lib/hooks/useDebounce/useDebounce";
 import { HStack, VStack } from "@/shared/ui/Stack";
 import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
