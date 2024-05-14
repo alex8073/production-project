@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { memo, Suspense, useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Text } from "@/shared/ui/Text";
 import { Loader } from "@/shared/ui/Loader";
@@ -14,6 +14,7 @@ import {
 import { getArticleComments } from "../../model/slice/articleDetailsCommentsSlice";
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 interface IArticleDetailsCommentsProps {
     className?: string;
@@ -25,7 +26,7 @@ export const ArticleDetailsComments = memo((props: IArticleDetailsCommentsProps)
     const { t } = useTranslation();
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
