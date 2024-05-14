@@ -12,9 +12,6 @@ import CalendarIcon from "@/shared/assets/icons/calendar.svg";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { HStack, VStack } from "@/shared/ui/Stack";
 import { ArticleBlockType } from "../../model/const/consts";
-import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
-import { ArticleImageBlockComponents } from "../ArticleImageBlockComponent/ArticleImageBlockComponents";
-import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
 import {
     getArticleDetailsData,
@@ -24,6 +21,11 @@ import {
 import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
 import cls from "./ArticleDetails.module.scss";
 import { IArticleBlock } from "../../model/types/article";
+import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
+import {
+    ArticleImageBlockComponents,
+} from "../ArticleImageBlockComponent/ArticleImageBlockComponents";
+import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 
 interface IArticleDetailsProps {
     className?: string;
