@@ -31,7 +31,7 @@ const ArticlesPage = (props: IArticlesPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            <Page className={classNames("", {}, [className])}>
+            <Page className={classNames("", {}, [className])} data-testid="ArticlesPage">
                 <VStack gap="32" max style={{ height: "100%" }}>
                     <ArticlesPageFilters />
                     <ArticleInfiniteList />
