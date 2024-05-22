@@ -3,7 +3,7 @@ import webpack, { DefinePlugin, RuleSetRule } from "webpack";
 import { IBuildPaths } from "../build/types/config";
 import { buildCssLoaders } from "../build/loaders/buildCssLoaders";
 
-export default ({ config }: {config: webpack.Configuration}) => {
+export default ({ config }: { config: webpack.Configuration }) => {
     const paths: IBuildPaths = {
         build: "",
         entry: "",
@@ -33,11 +33,13 @@ export default ({ config }: {config: webpack.Configuration}) => {
     });
     config.module!.rules.push(buildCssLoaders(true));
 
-    config.plugins!.push(new DefinePlugin({
-        __IS_DEV__: true,
-        __API__: JSON.stringify("https://testapi.com"),
-        __PROJECT__: JSON.stringify("storybook"),
-    }));
+    config.plugins!.push(
+        new DefinePlugin({
+            __IS_DEV__: true,
+            __API__: JSON.stringify("https://testapi.com"),
+            __PROJECT__: JSON.stringify("storybook"),
+        }),
+    );
 
     return config;
 };

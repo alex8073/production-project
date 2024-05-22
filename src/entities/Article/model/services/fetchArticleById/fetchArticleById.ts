@@ -6,24 +6,24 @@ export const fetchArticleById = createAsyncThunk<
     IArticle,
     string,
     IThunkConfig<string>
->(
-    "articleDetails/fetchArticleById",
-    async (articleId, thunkAPI) => {
-        const { extra, rejectWithValue } = thunkAPI;
-        try {
-            const response = await extra.api.get<IArticle>(`/articles/${articleId}`, {
+>("articleDetails/fetchArticleById", async (articleId, thunkAPI) => {
+    const { extra, rejectWithValue } = thunkAPI;
+    try {
+        const response = await extra.api.get<IArticle>(
+            `/articles/${articleId}`,
+            {
                 params: {
                     _expand: "user",
                 },
-            });
+            },
+        );
 
-            if (!response.data) {
-                throw new Error();
-            }
-
-            return response.data;
-        } catch (e) {
-            return rejectWithValue("error");
+        if (!response.data) {
+            throw new Error();
         }
-    },
-);
+
+        return response.data;
+    } catch (e) {
+        return rejectWithValue("error");
+    }
+});

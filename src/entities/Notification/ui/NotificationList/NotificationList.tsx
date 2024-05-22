@@ -12,7 +12,9 @@ interface INotificationListProps {
 
 export const NotificationList = memo((props: INotificationListProps) => {
     const { className } = props;
-    const { data, isLoading } = useNotifications(null, { pollingInterval: 5000 });
+    const { data, isLoading } = useNotifications(null, {
+        pollingInterval: 5000,
+    });
 
     if (isLoading) {
         return (
@@ -32,7 +34,9 @@ export const NotificationList = memo((props: INotificationListProps) => {
             gap="16"
             className={classNames(cls.NotificationList, {}, [className])}
         >
-            {data?.map((item) => <NotificationItem item={item} />)}
+            {data?.map((item) => (
+                <NotificationItem item={item} />
+            ))}
         </VStack>
     );
 });

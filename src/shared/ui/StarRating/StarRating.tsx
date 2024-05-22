@@ -13,15 +13,13 @@ interface IStarRatingProps {
 const stars = [1, 2, 3, 4, 5];
 
 export const StarRating = memo((props: IStarRatingProps) => {
-    const {
-        className,
-        onSelect,
-        size = 30,
-        selectedStar = 0,
-    } = props;
+    const { className, onSelect, size = 30, selectedStar = 0 } = props;
 
-    const [currentStarCount, setCurrentStarCount] = useState<number>(selectedStar);
-    const [isSelected, setIsSelected] = useState<boolean>(Boolean(selectedStar));
+    const [currentStarCount, setCurrentStarCount] =
+        useState<number>(selectedStar);
+    const [isSelected, setIsSelected] = useState<boolean>(
+        Boolean(selectedStar),
+    );
 
     const onHover = (starCount: number) => () => {
         if (!isSelected) {
@@ -44,12 +42,7 @@ export const StarRating = memo((props: IStarRatingProps) => {
     };
 
     return (
-        <div className={classNames(
-            cls.StarRating,
-            {},
-            [className],
-        )}
-        >
+        <div className={classNames(cls.StarRating, {}, [className])}>
             {stars.map((starNumber) => (
                 <StarIcon
                     key={starNumber}

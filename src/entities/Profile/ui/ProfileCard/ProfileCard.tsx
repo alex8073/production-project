@@ -46,7 +46,14 @@ export const ProfileCard = (props: IProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <HStack max justify="center" className={classNames(cls.ProfileCard, { }, [cls.loading, className])}>
+            <HStack
+                max
+                justify="center"
+                className={classNames(cls.ProfileCard, {}, [
+                    cls.loading,
+                    className,
+                ])}
+            >
                 <Loader />
             </HStack>
         );
@@ -54,7 +61,14 @@ export const ProfileCard = (props: IProfileCardProps) => {
 
     if (error) {
         return (
-            <HStack max justify="center" className={classNames(cls.ProfileCard, { }, [cls.error, className])}>
+            <HStack
+                max
+                justify="center"
+                className={classNames(cls.ProfileCard, {}, [
+                    cls.error,
+                    className,
+                ])}
+            >
                 <Text
                     theme={TextTheme.ERROR}
                     title={t("Profile loading error")}
@@ -70,13 +84,16 @@ export const ProfileCard = (props: IProfileCardProps) => {
     };
 
     return (
-        <VStack max gap="16" className={classNames(cls.ProfileCard, mods, [className])}>
-            {data?.avatar
-                && (
-                    <HStack max justify="center">
-                        <Avatar src={data?.avatar} alt="" />
-                    </HStack>
-                )}
+        <VStack
+            max
+            gap="16"
+            className={classNames(cls.ProfileCard, mods, [className])}
+        >
+            {data?.avatar && (
+                <HStack max justify="center">
+                    <Avatar src={data?.avatar} alt="" />
+                </HStack>
+            )}
             <Input
                 value={data?.firstName}
                 placeholder={t("Name")}

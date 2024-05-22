@@ -1,5 +1,11 @@
 import {
-    HTMLAttributeAnchorTarget, memo, useCallback, useEffect, useMemo, useRef, useState,
+    HTMLAttributeAnchorTarget,
+    memo,
+    useCallback,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
 } from "react";
 import { useTranslation } from "react-i18next";
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from "react-virtuoso";
@@ -22,9 +28,10 @@ interface IArticleListProps {
     onLoadNextPart?: () => void;
 }
 
-const getSkeletons = (view: ArticleListView) => new Array(view === ArticleListView.TILE ? 9 : 3)
-    .fill(0)
-    .map((_, index) => <ArticleListItemSkeleton key={index} view={view} />);
+const getSkeletons = (view: ArticleListView) =>
+    new Array(view === ArticleListView.TILE ? 9 : 3)
+        .fill(0)
+        .map((_, index) => <ArticleListItemSkeleton key={index} view={view} />);
 
 export const ArticleList = memo((props: IArticleListProps) => {
     const {
@@ -38,22 +45,26 @@ export const ArticleList = memo((props: IArticleListProps) => {
     } = props;
     const { t } = useTranslation("articles");
 
-    const renderArticle = useCallback((index: number, article: IArticle) => (
-        <ArticleListItem
-            article={article}
-            view={view}
-            className={cls.card}
-            key={article.id}
-            target={target}
-            index={index}
-        />
-    ), [target, view]);
+    const renderArticle = useCallback(
+        (index: number, article: IArticle) => (
+            <ArticleListItem
+                article={article}
+                view={view}
+                className={cls.card}
+                key={article.id}
+                target={target}
+                index={index}
+            />
+        ),
+        [target, view],
+    );
 
     const [selectedArticleId, setSelectedArticleId] = useState(0);
     const virtuosoFridRef = useRef<VirtuosoGridHandle>(null);
 
     useEffect(() => {
-        const currentArticleID = sessionStorage.getItem(ARTICLE_LIST_ITEM_ID) || 0;
+        const currentArticleID =
+            sessionStorage.getItem(ARTICLE_LIST_ITEM_ID) || 0;
         setSelectedArticleId(+currentArticleID);
     }, []);
 
@@ -85,7 +96,11 @@ export const ArticleList = memo((props: IArticleListProps) => {
         // eslint-disable-next-line react/no-unstable-nested-components
         const ItemContainerComp = ({ index }: { index: number }) => (
             <div className={cls.ItemContainer}>
-                <ArticleListItemSkeleton key={index} view={view} className={cls.card} />
+                <ArticleListItemSkeleton
+                    key={index}
+                    view={view}
+                    className={cls.card}
+                />
             </div>
         );
 
@@ -119,15 +134,26 @@ export const ArticleList = memo((props: IArticleListProps) => {
                 scrollSeekConfiguration={{
                     enter: (velocity) => Math.abs(velocity) > 200,
                     exit: (velocity) => Math.abs(velocity) < 30,
-
                 }}
             />
         );
-    }, [articles, isLoading, onLoadNextPart, renderArticle, selectedArticleId, view]);
+    }, [
+        articles,
+        isLoading,
+        onLoadNextPart,
+        renderArticle,
+        selectedArticleId,
+        view,
+    ]);
 
     if (!isLoading && !articles.length) {
         return (
-            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+            <div
+                className={classNames(cls.ArticleList, {}, [
+                    className,
+                    cls[view],
+                ])}
+            >
                 <Text title={t("Articles not found")} />
             </div>
         );
@@ -138,20 +164,18 @@ export const ArticleList = memo((props: IArticleListProps) => {
             className={classNames(cls.ArticleList, {}, [className, cls[view]])}
             data-testid="ArticleList"
         >
-            {
-                virtualized
-                    ? virtualizedList
-                    : articles.map((item, index) => (
-                        <ArticleListItem
-                            article={item}
-                            view={view}
-                            target={target}
-                            key={item.id}
-                            className={cls.card}
-                            index={index}
-                        />
-                    ))
-            }
+            {virtualized
+                ? virtualizedList
+                : articles.map((item, index) => (
+                      <ArticleListItem
+                          article={item}
+                          view={view}
+                          target={target}
+                          key={item.id}
+                          className={cls.card}
+                          index={index}
+                      />
+                  ))}
             {isLoading && getSkeletons(view)}
         </div>
     );

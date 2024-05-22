@@ -12,7 +12,9 @@ export default {
     },
 } as ComponentMeta<typeof ArticleList>;
 
-const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+const Template: ComponentStory<typeof ArticleList> = (args) => (
+    <ArticleList {...args} />
+);
 
 const article = {
     id: "1",
@@ -26,9 +28,7 @@ const article = {
         username: "Bob",
         avatar: "https://webmg.ru/wp-content/uploads/2022/11/i-76-44.jpeg",
     },
-    type: [
-        "IT", "ECONOMICS", "POLITICS",
-    ],
+    type: ["IT", "ECONOMICS", "POLITICS"],
     blocks: [
         {
             id: "1",
@@ -43,7 +43,7 @@ const article = {
         {
             id: "4",
             type: "CODE",
-            code: "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;",
+            code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;',
         },
         {
             id: "5",
@@ -94,7 +94,9 @@ const article = {
 export const TileViewDefault = Template.bind({});
 TileViewDefault.args = {
     isLoading: false,
-    articles: new Array(16).fill(0).map((item, i) => ({ ...article, id: `${i}` })),
+    articles: new Array(16)
+        .fill(0)
+        .map((item, i) => ({ ...article, id: `${i}` })),
     view: ArticleListView.TILE,
     virtualized: false,
 };
@@ -110,7 +112,9 @@ TileViewLoading.args = {
 export const ListViewDefault = Template.bind({});
 ListViewDefault.args = {
     isLoading: false,
-    articles: new Array(3).fill(0).map((item, i) => ({ ...article, id: `${i}` })),
+    articles: new Array(3)
+        .fill(0)
+        .map((item, i) => ({ ...article, id: `${i}` })),
     view: ArticleListView.LIST,
     virtualized: false,
 };

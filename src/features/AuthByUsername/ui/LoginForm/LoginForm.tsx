@@ -5,7 +5,10 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { Input } from "@/shared/ui/Input";
 import { Text, TextTheme } from "@/shared/ui/Text";
-import { DynamicModuleLoader, IReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import {
+    DynamicModuleLoader,
+    IReducersList,
+} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
 import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
@@ -42,21 +45,23 @@ const LoginForm = memo(({ className, onSuccess }: ILoginFormProps) => {
         },
         [dispatch],
     );
-    const onLoginClick = useCallback(
-        async () => {
-            const result = await dispatch(loginByUsername({ username, password }));
-            if (result.meta.requestStatus) {
-                onSuccess();
-            }
-        },
-        [dispatch, onSuccess, password, username],
-    );
+    const onLoginClick = useCallback(async () => {
+        const result = await dispatch(loginByUsername({ username, password }));
+        if (result.meta.requestStatus) {
+            onSuccess();
+        }
+    }, [dispatch, onSuccess, password, username]);
 
     return (
         <DynamicModuleLoader reducers={initialReducers}>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title={t("Login form")} />
-                {error && <Text text={t("Incorrect login or password")} theme={TextTheme.ERROR} />}
+                {error && (
+                    <Text
+                        text={t("Incorrect login or password")}
+                        theme={TextTheme.ERROR}
+                    />
+                )}
                 <Input
                     placeholder={t("User name")}
                     value={username}

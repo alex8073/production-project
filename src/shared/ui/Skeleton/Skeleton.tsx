@@ -11,12 +11,7 @@ interface ISkeletonProps {
 }
 
 export const Skeleton = memo((props: ISkeletonProps) => {
-    const {
-        className,
-        height,
-        width,
-        border,
-    } = props;
+    const { className, height, width, border } = props;
     const { t } = useTranslation();
 
     const styles: CSSProperties = {

@@ -13,17 +13,15 @@ interface IAvatarProps {
 }
 
 export const Avatar = (props: IAvatarProps) => {
-    const {
-        className,
-        src,
-        alt = "",
-        size = 100,
-    } = props;
+    const { className, src, alt = "", size = 100 } = props;
 
-    const styles: CSSProperties = useMemo(() => ({
-        width: size,
-        height: size,
-    }), [size]);
+    const styles: CSSProperties = useMemo(
+        () => ({
+            width: size,
+            height: size,
+        }),
+        [size],
+    );
 
     const fallback = <Skeleton width={size} height={size} border="50%" />;
     const errorFallback = <UserIcon />;

@@ -14,7 +14,9 @@ export default {
     decorators: [withMock],
 } as ComponentMeta<typeof NotificationList>;
 
-const Template: ComponentStory<typeof NotificationList> = (args) => <NotificationList {...args} />;
+const Template: ComponentStory<typeof NotificationList> = (args) => (
+    <NotificationList {...args} />
+);
 
 const notification: INotification = {
     id: "1",
@@ -35,7 +37,11 @@ Default.parameters = {
             response: [
                 { ...notification, id: "1" },
                 { ...notification, id: "2" },
-                { ...notification, id: "3", href: "http://localhost:3000/admin" },
+                {
+                    ...notification,
+                    id: "3",
+                    href: "http://localhost:3000/admin",
+                },
             ],
         },
     ],

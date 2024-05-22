@@ -14,8 +14,8 @@ import "@/app/styles/index.scss";
 export interface IComponentRenderOptions {
     route?: string;
     initialState?: DeepPartial<IStateSchema>;
-    asyncReducers?: DeepPartial<ReducersMapObject<IStateSchema>>
-    theme?: Theme
+    asyncReducers?: DeepPartial<ReducersMapObject<IStateSchema>>;
+    theme?: Theme;
 }
 
 interface ITestProviderProps {
@@ -33,12 +33,13 @@ export function TestProvider(props: ITestProviderProps) {
     } = options;
     return (
         <MemoryRouter initialEntries={[route]}>
-            <StoreProvider asyncReducers={asyncReducers} initialState={initialState}>
+            <StoreProvider
+                asyncReducers={asyncReducers}
+                initialState={initialState}
+            >
                 <I18nextProvider i18n={i18nForTests}>
                     <ThemeProvider initialTheme={theme}>
-                        <div className={`app ${theme}`}>
-                            {children}
-                        </div>
+                        <div className={`app ${theme}`}>{children}</div>
                     </ThemeProvider>
                 </I18nextProvider>
             </StoreProvider>
@@ -46,6 +47,9 @@ export function TestProvider(props: ITestProviderProps) {
     );
 }
 
-export function componentRender(component: ReactNode, options: IComponentRenderOptions = {}) {
+export function componentRender(
+    component: ReactNode,
+    options: IComponentRenderOptions = {},
+) {
     return render(<TestProvider options={options}>{component}</TestProvider>);
 }

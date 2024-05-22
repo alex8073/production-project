@@ -5,7 +5,7 @@ import ThemeSwitcherIcon from "@/shared/assets/icons/theme-switcher.svg";
 import { Button, ButtonTheme } from "@/shared/ui/Button";
 
 interface IThemeSwitcherProps {
-  className?: string;
+    className?: string;
 }
 
 export const ThemeSwitcher = memo(({ className }: IThemeSwitcherProps) => {

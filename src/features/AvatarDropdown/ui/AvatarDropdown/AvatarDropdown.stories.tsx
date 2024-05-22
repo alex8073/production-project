@@ -10,11 +10,17 @@ export default {
         backgroundColor: { control: "color" },
     },
     decorators: [
-        (Story) => <div style={{ padding: "100px" }}><Story /></div>,
+        (Story) => (
+            <div style={{ padding: "100px" }}>
+                <Story />
+            </div>
+        ),
     ],
 } as ComponentMeta<typeof AvatarDropdown>;
 
-const Template: ComponentStory<typeof AvatarDropdown> = (args) => <AvatarDropdown {...args} />;
+const Template: ComponentStory<typeof AvatarDropdown> = (args) => (
+    <AvatarDropdown {...args} />
+);
 
 export const Default = Template.bind({});
 Default.decorators = [StoreDecorator({ user: { authData: {} } })];

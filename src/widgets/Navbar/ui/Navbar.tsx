@@ -14,7 +14,7 @@ import cls from "./Navbar.module.scss";
 import { getRouteArticleCreate } from "@/shared/const/router";
 
 interface INavbarProps {
-  className?: string;
+    className?: string;
 }
 
 export const Navbar = memo(({ className }: INavbarProps) => {
@@ -44,7 +44,6 @@ export const Navbar = memo(({ className }: INavbarProps) => {
                     <NotificationButton />
                     <AvatarDropdown />
                 </HStack>
-
             </header>
         );
     }
@@ -60,10 +59,7 @@ export const Navbar = memo(({ className }: INavbarProps) => {
             </Button>
 
             {isAuthModal && (
-                <LoginModal
-                    isOpen={isAuthModal}
-                    onClose={onCloseModal}
-                />
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
             )}
         </header>
     );

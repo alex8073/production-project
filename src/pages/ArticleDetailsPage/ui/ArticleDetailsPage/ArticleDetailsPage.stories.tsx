@@ -20,7 +20,9 @@ export default {
     decorators: [withMock],
 } as ComponentMeta<typeof ArticleDetailsPage>;
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
+    <ArticleDetailsPage {...args} />
+);
 
 const article: IArticle = {
     id: "1",
@@ -49,7 +51,7 @@ const article: IArticle = {
         {
             id: "4",
             type: ArticleBlockType.CODE,
-            code: "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;",
+            code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;',
         },
         {
             id: "5",
@@ -99,11 +101,13 @@ const article: IArticle = {
 
 export const Default = Template.bind({});
 Default.args = {};
-Default.decorators = [StoreDecorator({
-    articleDetails: {
-        data: article,
-    },
-})];
+Default.decorators = [
+    StoreDecorator({
+        articleDetails: {
+            data: article,
+        },
+    }),
+];
 Default.parameters = {
     mockData: [
         {

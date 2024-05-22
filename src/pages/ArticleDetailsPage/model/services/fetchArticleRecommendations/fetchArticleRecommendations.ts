@@ -6,24 +6,21 @@ export const fetchArticleRecommendations = createAsyncThunk<
     IArticle[],
     void,
     IThunkConfig<string>
->(
-    "articleDetailsPage/fetchArticleRecommendations",
-    async (props, thunkAPI) => {
-        const { extra, rejectWithValue } = thunkAPI;
-        try {
-            const response = await extra.api.get<IArticle[]>("/articles", {
-                params: {
-                    _limit: 4,
-                },
-            });
+>("articleDetailsPage/fetchArticleRecommendations", async (props, thunkAPI) => {
+    const { extra, rejectWithValue } = thunkAPI;
+    try {
+        const response = await extra.api.get<IArticle[]>("/articles", {
+            params: {
+                _limit: 4,
+            },
+        });
 
-            if (!response.data) {
-                throw new Error();
-            }
-
-            return response.data;
-        } catch (e) {
-            return rejectWithValue("error");
+        if (!response.data) {
+            throw new Error();
         }
-    },
-);
+
+        return response.data;
+    } catch (e) {
+        return rejectWithValue("error");
+    }
+});

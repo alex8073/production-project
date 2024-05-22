@@ -5,15 +5,17 @@ import { Page } from "@/widgets/Page";
 import cls from "./NotFoundPage.module.scss";
 
 interface INotFoundPageProps {
-  className?: string;
+    className?: string;
 }
 
 export const NotFoundPage = memo(({ className }: INotFoundPageProps) => {
     const { t } = useTranslation();
     return (
-        <Page className={classNames(cls.NotFoundPage, {}, [className])} data-testid="NotFoundPage">
+        <Page
+            className={classNames(cls.NotFoundPage, {}, [className])}
+            data-testid="NotFoundPage"
+        >
             {t("Page not found")}
         </Page>
-
     );
 });

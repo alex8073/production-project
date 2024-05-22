@@ -12,7 +12,7 @@ interface IArticleEditPageProps {
 const ArticleEditPage = memo((props: IArticleEditPageProps) => {
     const { className } = props;
     const { t } = useTranslation("article-details");
-    const { id } = useParams<{id: string}>();
+    const { id } = useParams<{ id: string }>();
     const isEdit = Boolean(id);
 
     return (

@@ -5,7 +5,7 @@ import { Button } from "@/shared/ui/Button";
 import cls from "./PageError.module.scss";
 
 interface IPageErrorProps {
-  className?: string;
+    className?: string;
 }
 
 export const PageError = memo(({ className }: IPageErrorProps) => {
@@ -19,9 +19,7 @@ export const PageError = memo(({ className }: IPageErrorProps) => {
     return (
         <div className={classNames(cls.PageError, {}, [className])}>
             <p>{t("An unexpected error has occurred")}</p>
-            <Button onClick={reloadPage}>
-                {t("Refresh the page")}
-            </Button>
+            <Button onClick={reloadPage}>{t("Refresh the page")}</Button>
         </div>
     );
 });

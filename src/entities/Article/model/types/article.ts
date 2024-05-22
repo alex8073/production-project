@@ -7,7 +7,7 @@ export interface IArticleBlockBase {
 }
 
 export interface IArticleBlockCode extends IArticleBlockBase {
-    type: ArticleBlockType.CODE
+    type: ArticleBlockType.CODE;
     code: string;
 }
 
@@ -23,7 +23,10 @@ export interface IArticleBlockText extends IArticleBlockBase {
     paragraphs: string[];
 }
 
-export type IArticleBlock = IArticleBlockCode | IArticleBlockImage | IArticleBlockText;
+export type IArticleBlock =
+    | IArticleBlockCode
+    | IArticleBlockImage
+    | IArticleBlockText;
 
 export interface IArticle {
     id: string;

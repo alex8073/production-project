@@ -8,7 +8,6 @@ interface ILoginModalProps {
     className?: string;
     isOpen: boolean;
     onClose: () => void;
-
 }
 
 export const LoginModal = (props: ILoginModalProps) => {
@@ -24,7 +23,6 @@ export const LoginModal = (props: ILoginModalProps) => {
             <Suspense fallback={<Loader />}>
                 <LoginFormAsync onSuccess={onClose} />
             </Suspense>
-
         </Modal>
     );
 };

@@ -1,7 +1,10 @@
 import { memo } from "react";
 import { useSearchParams } from "react-router-dom";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { DynamicModuleLoader, IReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import {
+    DynamicModuleLoader,
+    IReducersList,
+} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { Page } from "@/widgets/Page";
@@ -31,7 +34,10 @@ const ArticlesPage = (props: IArticlesPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            <Page className={classNames("", {}, [className])} data-testid="ArticlesPage">
+            <Page
+                className={classNames("", {}, [className])}
+                data-testid="ArticlesPage"
+            >
                 <VStack gap="32" max style={{ height: "100%" }}>
                     <ArticlesPageFilters />
                     <ArticleInfiniteList />

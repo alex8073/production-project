@@ -36,7 +36,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     fullWidth?: boolean;
 }
 
-export const Button = memo((props:IButtonProps) => {
+export const Button = memo((props: IButtonProps) => {
     const {
         className = "",
         children,

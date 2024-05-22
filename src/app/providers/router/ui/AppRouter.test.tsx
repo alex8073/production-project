@@ -1,7 +1,11 @@
 import { screen, waitForElementToBeRemoved } from "@testing-library/react";
 import { componentRender } from "@/shared/lib/tests/componentRender/componentsRender";
 import AppRouter from "./AppRouter";
-import { getRouteAbout, getRouteProfile, getRouteAdmin } from "@/shared/const/router";
+import {
+    getRouteAbout,
+    getRouteProfile,
+    getRouteAdmin,
+} from "@/shared/const/router";
 import { UserRole } from "@/entities/User";
 
 describe("app/router/AppRouter", () => {
@@ -11,7 +15,9 @@ describe("app/router/AppRouter", () => {
         });
 
         // timeout добавлен так как импортируем компонент с таймаутом для имитации работы сервера
-        await waitForElementToBeRemoved(screen.queryByTestId("Spinner"), { timeout: 2000 }).catch((error) => console.log(error));
+        await waitForElementToBeRemoved(screen.queryByTestId("Spinner"), {
+            timeout: 2000,
+        }).catch((error) => console.log(error));
 
         const page = await screen.findByTestId("AboutPage");
         expect(page).toBeInTheDocument();
@@ -56,7 +62,9 @@ describe("app/router/AppRouter", () => {
         });
 
         // timeout добавлен так как импортируем компонент с таймаутом для имитации работы сервера
-        await waitForElementToBeRemoved(screen.queryByTestId("Spinner"), { timeout: 2000 }).catch((error) => console.log(error));
+        await waitForElementToBeRemoved(screen.queryByTestId("Spinner"), {
+            timeout: 2000,
+        }).catch((error) => console.log(error));
 
         const page = await screen.findByTestId("ForbiddenPage");
         expect(page).toBeInTheDocument();
@@ -66,7 +74,10 @@ describe("app/router/AppRouter", () => {
         componentRender(<AppRouter />, {
             route: getRouteAdmin(),
             initialState: {
-                user: { _initialized: true, authData: { roles: [UserRole.ADMIN] } },
+                user: {
+                    _initialized: true,
+                    authData: { roles: [UserRole.ADMIN] },
+                },
             },
         });
 
