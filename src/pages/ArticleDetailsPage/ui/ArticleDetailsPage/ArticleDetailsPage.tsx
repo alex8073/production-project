@@ -3,7 +3,10 @@ import { memo } from "react";
 import { useParams } from "react-router-dom";
 import { ArticleDetails } from "@/entities/Article";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { DynamicModuleLoader, IReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import {
+    DynamicModuleLoader,
+    IReducersList,
+} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { Page } from "@/widgets/Page";
 import { VStack } from "@/shared/ui/Stack";
 import { ArticleRecommendationsList } from "@/features/ArticleRecommendationsList";
@@ -19,17 +22,18 @@ interface IArticleDetailsPageProps {
 
 const reducers: IReducersList = {
     articleDetailsPage: articleDetailsPageReducer,
-
 };
 
 const ArticleDetailsPage = (props: IArticleDetailsPageProps) => {
     const { className } = props;
     const { t } = useTranslation("article-details");
-    const { id } = useParams<{id: string}>();
+    const { id } = useParams<{ id: string }>();
 
     if (!id) {
         return (
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
                 {t("Article not found")}
             </Page>
         );
@@ -37,7 +41,9 @@ const ArticleDetailsPage = (props: IArticleDetailsPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
                 <VStack max gap="16">
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />

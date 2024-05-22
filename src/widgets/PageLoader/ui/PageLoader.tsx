@@ -4,7 +4,7 @@ import { Loader } from "@/shared/ui/Loader";
 import cls from "./PageLoader.module.scss";
 
 interface IPageLoaderProps {
-  className?: string;
+    className?: string;
 }
 
 export const PageLoader = memo(({ className }: IPageLoaderProps) => (

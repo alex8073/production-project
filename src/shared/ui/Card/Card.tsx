@@ -25,7 +25,10 @@ export const Card = memo((props: ICardProps) => {
 
     return (
         <div
-            className={classNames(cls.Card, { [cls.max]: max }, [className, cls[theme]])}
+            className={classNames(cls.Card, { [cls.max]: max }, [
+                className,
+                cls[theme],
+            ])}
             {...rest}
         >
             {children}

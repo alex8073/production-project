@@ -13,10 +13,14 @@ describe("getProfileValidationErrors", () => {
                 validateErrors: errors,
             },
         };
-        expect(getProfileValidationErrors(state as IStateSchema)).toEqual(errors);
+        expect(getProfileValidationErrors(state as IStateSchema)).toEqual(
+            errors,
+        );
     });
     test("should return undefined", () => {
         const state: DeepPartial<IStateSchema> = {};
-        expect(getProfileValidationErrors(state as IStateSchema)).toEqual(undefined);
+        expect(getProfileValidationErrors(state as IStateSchema)).toEqual(
+            undefined,
+        );
     });
 });

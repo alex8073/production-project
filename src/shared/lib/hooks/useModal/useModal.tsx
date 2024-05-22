@@ -1,13 +1,10 @@
-import {
-    useCallback, useEffect, useRef, useState,
-} from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 interface IUseModalProps {
     onClose?: () => void;
     isOpen?: boolean;
     lazy?: boolean;
     animationDelay: number;
-
 }
 
 /**
@@ -18,12 +15,7 @@ interface IUseModalProps {
  */
 
 export function useModal(props: IUseModalProps) {
-    const {
-        onClose,
-        lazy,
-        isOpen,
-        animationDelay,
-    } = props;
+    const { onClose, lazy, isOpen, animationDelay } = props;
     const [isClosing, setIsClosing] = useState<boolean>(false);
     const [isMounted, setIsMounted] = useState<boolean>(false);
     const timeRef = useRef<ReturnType<typeof setTimeout>>();
@@ -44,11 +36,14 @@ export function useModal(props: IUseModalProps) {
         }
     }, [animationDelay, onClose]);
 
-    const onKeyDown = useCallback((e: KeyboardEvent) => {
-        if (e.key === "Escape") {
-            close();
-        }
-    }, [close]);
+    const onKeyDown = useCallback(
+        (e: KeyboardEvent) => {
+            if (e.key === "Escape") {
+                close();
+            }
+        },
+        [close],
+    );
 
     useEffect(() => {
         if (isOpen) {

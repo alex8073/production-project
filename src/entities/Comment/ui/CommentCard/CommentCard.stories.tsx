@@ -10,7 +10,9 @@ export default {
     },
 } as ComponentMeta<typeof CommentCard>;
 
-const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...args} />;
+const Template: ComponentStory<typeof CommentCard> = (args) => (
+    <CommentCard {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {
@@ -23,7 +25,6 @@ Default.args = {
             avatar: "https://webmg.ru/wp-content/uploads/2022/11/i-76-44.jpeg",
         },
     },
-
 };
 
 export const IsLoading = Template.bind({});

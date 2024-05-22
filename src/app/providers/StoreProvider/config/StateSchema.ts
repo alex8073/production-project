@@ -1,6 +1,9 @@
 import { CombinedState, Dispatch } from "redux";
 import {
-    AnyAction, EnhancedStore, Reducer, ReducersMapObject,
+    AnyAction,
+    EnhancedStore,
+    Reducer,
+    ReducersMapObject,
 } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
 import { ICounterSchema } from "@/entities/Counter";
@@ -18,7 +21,7 @@ export interface IStateSchema {
     counter: ICounterSchema;
     user: IUserSchema;
     scrollSaver: IScrollSaverSchema;
-    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>,
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
     // Асинхронные редьюсеры
     loginForm?: ILoginSchema;
@@ -33,16 +36,19 @@ export type IStateSchemaKey = keyof IStateSchema;
 export type IMountedReducers = OptionalRecord<IStateSchemaKey, boolean>;
 
 export interface IReducerManager {
-    getReducerMap: ()=> ReducersMapObject<IStateSchema>;
-    reduce: (state: IStateSchema, action: AnyAction) => CombinedState<IStateSchema>;
+    getReducerMap: () => ReducersMapObject<IStateSchema>;
+    reduce: (
+        state: IStateSchema,
+        action: AnyAction,
+    ) => CombinedState<IStateSchema>;
     add: (key: IStateSchemaKey, reducer: Reducer) => void;
     remove: (key: IStateSchemaKey) => void;
     // true - вмонтирован, false - демонтирован
     getMountedReducers: () => IMountedReducers;
 }
 
-export interface IReduxStoreWithManager extends EnhancedStore<IStateSchema>{
-    reducerManager:IReducerManager;
+export interface IReduxStoreWithManager extends EnhancedStore<IStateSchema> {
+    reducerManager: IReducerManager;
 }
 
 export interface IThunkExtraArg {
@@ -50,8 +56,8 @@ export interface IThunkExtraArg {
 }
 
 export interface IThunkConfig<T> {
-    rejectValue: T,
-    extra: IThunkExtraArg,
-    dispatch?: Dispatch,
-    state: IStateSchema,
+    rejectValue: T;
+    extra: IThunkExtraArg;
+    dispatch?: Dispatch;
+    state: IStateSchema;
 }

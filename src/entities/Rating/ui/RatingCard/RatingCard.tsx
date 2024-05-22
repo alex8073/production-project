@@ -37,14 +37,17 @@ export const RatingCard = memo((props: IRatingCardProps) => {
     const [starsCount, setStarsCount] = useState<number>(rate);
     const [feedback, setFeedback] = useState<string>("");
 
-    const onSelectStars = useCallback((selectedStarsCount: number) => {
-        setStarsCount(selectedStarsCount);
-        if (hasFeedback) {
-            setIsModalOpen(true);
-        } else {
-            onAccept?.(selectedStarsCount);
-        }
-    }, [hasFeedback, onAccept]);
+    const onSelectStars = useCallback(
+        (selectedStarsCount: number) => {
+            setStarsCount(selectedStarsCount);
+            if (hasFeedback) {
+                setIsModalOpen(true);
+            } else {
+                onAccept?.(selectedStarsCount);
+            }
+        },
+        [hasFeedback, onAccept],
+    );
 
     const acceptHandler = useCallback(() => {
         setIsModalOpen(false);
@@ -76,7 +79,11 @@ export const RatingCard = memo((props: IRatingCardProps) => {
         >
             <VStack align="center" gap="8" max>
                 <Text title={starsCount ? t("Thanks for the rating") : title} />
-                <StarRating selectedStar={starsCount} size={40} onSelect={onSelectStars} />
+                <StarRating
+                    selectedStar={starsCount}
+                    size={40}
+                    onSelect={onSelectStars}
+                />
             </VStack>
 
             <BrowserView>
@@ -106,12 +113,14 @@ export const RatingCard = memo((props: IRatingCardProps) => {
                 <Drawer isOpen={isModalOpen} lazy onClose={cancelHandler}>
                     <VStack max gap="32">
                         {modalContent}
-                        <Button fullWidth onClick={acceptHandler} size={ButtonSize.L}>
+                        <Button
+                            fullWidth
+                            onClick={acceptHandler}
+                            size={ButtonSize.L}
+                        >
                             {t("Send")}
                         </Button>
-                        <Button onClick={cancelHandler}>
-                            {t("Close")}
-                        </Button>
+                        <Button onClick={cancelHandler}>{t("Close")}</Button>
                     </VStack>
                 </Drawer>
             </MobileView>

@@ -14,7 +14,9 @@ export default {
     decorators: [withMock],
 } as ComponentMeta<typeof ArticlesPage>;
 
-const Template: ComponentStory<typeof ArticlesPage> = (args) => <ArticlesPage {...args} />;
+const Template: ComponentStory<typeof ArticlesPage> = (args) => (
+    <ArticlesPage {...args} />
+);
 
 const article: IArticle = {
     id: "1",
@@ -33,11 +35,13 @@ const article: IArticle = {
 
 export const Default = Template.bind({});
 Default.args = {};
-Default.decorators = [StoreDecorator({
-    articlesPage: {
-        view: ArticleListView.TILE,
-    },
-})];
+Default.decorators = [
+    StoreDecorator({
+        articlesPage: {
+            view: ArticleListView.TILE,
+        },
+    }),
+];
 Default.parameters = {
     mockData: [
         {

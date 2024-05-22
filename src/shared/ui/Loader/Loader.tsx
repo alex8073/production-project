@@ -3,11 +3,14 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import "./Loader.scss";
 
 interface ILoaderProps {
-  className?: string;
+    className?: string;
 }
 
 export const Loader = memo(({ className }: ILoaderProps) => (
-    <div className={classNames("lds-spinner", {}, [className])} data-testid="Spinner">
+    <div
+        className={classNames("lds-spinner", {}, [className])}
+        data-testid="Spinner"
+    >
         <div />
         <div />
         <div />

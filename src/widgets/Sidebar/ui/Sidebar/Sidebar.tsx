@@ -10,7 +10,7 @@ import { SidebarItem } from "../SidebarItem/SidebarItem";
 import cls from "./Sidebar.module.scss";
 
 interface ISidebarProps {
-  className?: string;
+    className?: string;
 }
 
 export const Sidebar = memo(({ className }: ISidebarProps) => {
@@ -21,15 +21,17 @@ export const Sidebar = memo(({ className }: ISidebarProps) => {
         setCollapsed((prev) => !prev);
     };
 
-    const sidebarItems = useMemo(() => (
-        sidebarItemsList.map((item) => (
-            <SidebarItem
-                item={item}
-                collapsed={collapsed}
-                key={item.path}
-            />
-        ))
-    ), [collapsed, sidebarItemsList]);
+    const sidebarItems = useMemo(
+        () =>
+            sidebarItemsList.map((item) => (
+                <SidebarItem
+                    item={item}
+                    collapsed={collapsed}
+                    key={item.path}
+                />
+            )),
+        [collapsed, sidebarItemsList],
+    );
 
     return (
         <aside
@@ -42,7 +44,12 @@ export const Sidebar = memo(({ className }: ISidebarProps) => {
                 {sidebarItems}
             </VStack>
 
-            <HStack gap="16" justify="center" align="center" className={cls.switchers}>
+            <HStack
+                gap="16"
+                justify="center"
+                align="center"
+                className={cls.switchers}
+            >
                 <ThemeSwitcher className="changePosition" />
                 <LangSwitcher short={collapsed} />
             </HStack>

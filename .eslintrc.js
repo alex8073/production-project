@@ -9,6 +9,7 @@ module.exports = {
         "airbnb",
         "plugin:i18next/recommended",
         "plugin:storybook/recommended",
+        "prettier",
     ],
     parser: "@typescript-eslint/parser",
     parserOptions: {
@@ -24,10 +25,7 @@ module.exports = {
         "unused-imports",
     ],
     rules: {
-        indent: [2, 4],
         quotes: [2, "double", { avoidEscape: true }],
-        "react/jsx-indent": [2, 4],
-        "react/jsx-indent-props": [2, 4],
         "unused-imports/no-unused-imports": "error",
         "react/jsx-filename-extension": [
             2,
@@ -51,7 +49,18 @@ module.exports = {
             "warn",
             {
                 markupOnly: true,
-                ignoreAttribute: ["data-testid", "to", "target", "direction", "justify", "align", "gap", "role", "as", "border"],
+                ignoreAttribute: [
+                    "data-testid",
+                    "to",
+                    "target",
+                    "direction",
+                    "justify",
+                    "align",
+                    "gap",
+                    "role",
+                    "as",
+                    "border",
+                ],
             },
         ],
         "max-len": [
@@ -74,7 +83,11 @@ module.exports = {
             "error",
             {
                 alias: "@",
-                testFilesPatterns: ["**/*.test.*", "**/*.story.*", "**/StoreDecorator.tsx"],
+                testFilesPatterns: [
+                    "**/*.test.*",
+                    "**/*.story.*",
+                    "**/StoreDecorator.tsx",
+                ],
             },
         ],
         "path-checker-fsd-stable/layer-imports": [
@@ -84,6 +97,7 @@ module.exports = {
                 ignoreImportPatterns: ["**/StoreProvider", "**/testing"],
             },
         ],
+        "react/jsx-max-props-per-line": ["error", { maximum: 4 }],
     },
     globals: {
         __IS_DEV__: true,

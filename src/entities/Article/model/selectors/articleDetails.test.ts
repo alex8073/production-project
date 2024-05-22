@@ -1,5 +1,9 @@
 import { IStateSchema } from "@/app/providers/StoreProvider";
-import { getArticleDetailsData, getArticleDetailsLoading, getArticleDetailsError } from "./articleDetails";
+import {
+    getArticleDetailsData,
+    getArticleDetailsLoading,
+    getArticleDetailsError,
+} from "./articleDetails";
 
 describe("getArticleDetailsData", () => {
     test("should return data", () => {
@@ -46,6 +50,8 @@ describe("getArticleDetailsError", () => {
     });
     test("should return undefined", () => {
         const state: DeepPartial<IStateSchema> = {};
-        expect(getArticleDetailsError(state as IStateSchema)).toEqual(undefined);
+        expect(getArticleDetailsError(state as IStateSchema)).toEqual(
+            undefined,
+        );
     });
 });

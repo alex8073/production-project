@@ -9,11 +9,17 @@ export default {
         backgroundColor: { control: "color" },
     },
     decorators: [
-        (Story) => <div style={{ padding: "100px" }}><Story /></div>,
+        (Story) => (
+            <div style={{ padding: "100px" }}>
+                <Story />
+            </div>
+        ),
     ],
 } as ComponentMeta<typeof ListBox>;
 
-const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />;
+const Template: ComponentStory<typeof ListBox> = (args) => (
+    <ListBox {...args} />
+);
 
 export const TopLeft = Template.bind({});
 TopLeft.args = {
@@ -21,10 +27,12 @@ TopLeft.args = {
     value: "TopLeft",
     items: [
         {
-            content: "dasdasd", value: "123",
+            content: "dasdasd",
+            value: "123",
         },
         {
-            content: "dassdfsdfhdasd", value: "456",
+            content: "dassdfsdfhdasd",
+            value: "456",
         },
     ],
 };
@@ -35,10 +43,12 @@ TopRight.args = {
     value: "TopRight",
     items: [
         {
-            content: "dasdasd", value: "123",
+            content: "dasdasd",
+            value: "123",
         },
         {
-            content: "dassdfsdfhdasd", value: "456",
+            content: "dassdfsdfhdasd",
+            value: "456",
         },
     ],
 };
@@ -49,10 +59,12 @@ BottomLeft.args = {
     value: "BottomLeft",
     items: [
         {
-            content: "dasdasd", value: "123",
+            content: "dasdasd",
+            value: "123",
         },
         {
-            content: "dassdfsdfhdasd", value: "456",
+            content: "dassdfsdfhdasd",
+            value: "456",
         },
     ],
 };
@@ -63,10 +75,12 @@ BottomRight.args = {
     value: "BottomRight",
     items: [
         {
-            content: "dasdasd", value: "123",
+            content: "dasdasd",
+            value: "123",
         },
         {
-            content: "dassdfsdfhdasd", value: "456",
+            content: "dassdfsdfhdasd",
+            value: "456",
         },
     ],
 };

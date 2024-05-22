@@ -16,7 +16,9 @@ interface IProfilePageHeaderProps {
     className?: string;
 }
 
-export const EditableProfileCardHeader = ({ className }: IProfilePageHeaderProps) => {
+export const EditableProfileCardHeader = ({
+    className,
+}: IProfilePageHeaderProps) => {
     const { t } = useTranslation("profile");
     const authData = useSelector(getUserAuthData);
     const profileData = useSelector(getProfileData);
@@ -37,10 +39,14 @@ export const EditableProfileCardHeader = ({ className }: IProfilePageHeaderProps
     }, [dispatch]);
 
     return (
-        <HStack justify="between" max className={classNames("", {}, [className])}>
+        <HStack
+            justify="between"
+            max
+            className={classNames("", {}, [className])}
+        >
             <Text title={t("Profile")} />
-            {canEdit && (readOnly
-                ? (
+            {canEdit &&
+                (readOnly ? (
                     <Button
                         theme={ButtonTheme.OUTLINE}
                         onClick={onEdit}
@@ -48,8 +54,7 @@ export const EditableProfileCardHeader = ({ className }: IProfilePageHeaderProps
                     >
                         {t("Edit")}
                     </Button>
-                )
-                : (
+                ) : (
                     <HStack gap="8">
                         <Button
                             theme={ButtonTheme.OUTLINE_RED}
@@ -66,9 +71,7 @@ export const EditableProfileCardHeader = ({ className }: IProfilePageHeaderProps
                             {t("Save")}
                         </Button>
                     </HStack>
-                )
-
-            )}
+                ))}
         </HStack>
     );
 };

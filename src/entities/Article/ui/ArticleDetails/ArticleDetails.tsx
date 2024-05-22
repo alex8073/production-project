@@ -2,7 +2,10 @@ import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { DynamicModuleLoader, IReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import {
+    DynamicModuleLoader,
+    IReducersList,
+} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Text, TextAlign, TextSize } from "@/shared/ui/Text";
 import { Skeleton } from "@/shared/ui/Skeleton";
@@ -22,9 +25,7 @@ import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
 import cls from "./ArticleDetails.module.scss";
 import { IArticleBlock } from "../../model/types/article";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
-import {
-    ArticleImageBlockComponents,
-} from "../ArticleImageBlockComponent/ArticleImageBlockComponents";
+import { ArticleImageBlockComponents } from "../ArticleImageBlockComponent/ArticleImageBlockComponents";
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 
 interface IArticleDetailsProps {
@@ -32,7 +33,9 @@ interface IArticleDetailsProps {
     id: string;
 }
 
-const initialReducers: IReducersList = { articleDetails: articleDetailsReducer };
+const initialReducers: IReducersList = {
+    articleDetails: articleDetailsReducer,
+};
 
 export const ArticleDetails = memo((props: IArticleDetailsProps) => {
     const { className, id } = props;
@@ -44,13 +47,20 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
 
     const renderBlock = useCallback((block: IArticleBlock) => {
         switch (block.type) {
-        case ArticleBlockType.TEXT:
-            return <ArticleTextBlockComponent key={block.id} block={block} />;
-        case ArticleBlockType.IMAGE:
-            return <ArticleImageBlockComponents key={block.id} block={block} />;
-        case ArticleBlockType.CODE:
-            return <ArticleCodeBlockComponent key={block.id} block={block} />;
-        default: return null;
+            case ArticleBlockType.TEXT:
+                return (
+                    <ArticleTextBlockComponent key={block.id} block={block} />
+                );
+            case ArticleBlockType.IMAGE:
+                return (
+                    <ArticleImageBlockComponents key={block.id} block={block} />
+                );
+            case ArticleBlockType.CODE:
+                return (
+                    <ArticleCodeBlockComponent key={block.id} block={block} />
+                );
+            default:
+                return null;
         }
     }, []);
 
@@ -75,15 +85,14 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
             </>
         );
     } else if (error) {
-        content = <Text title={t("Article loading error")} align={TextAlign.CENTER} />;
+        content = (
+            <Text title={t("Article loading error")} align={TextAlign.CENTER} />
+        );
     } else {
         content = (
             <>
                 <HStack max justify="center">
-                    <Avatar
-                        size={200}
-                        src={article?.img}
-                    />
+                    <Avatar size={200} src={article?.img} />
                 </HStack>
                 <VStack gap="4" max data-testid="ArticleDetails.Info">
                     <Text
@@ -104,16 +113,18 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
                     {article?.blocks.map(renderBlock)}
                 </VStack>
             </>
-
         );
     }
 
     return (
         <DynamicModuleLoader reducers={initialReducers}>
-            <VStack max gap="16" className={classNames(cls.ArticleDetails, {}, [className])}>
+            <VStack
+                max
+                gap="16"
+                className={classNames(cls.ArticleDetails, {}, [className])}
+            >
                 {content}
             </VStack>
         </DynamicModuleLoader>
-
     );
 });

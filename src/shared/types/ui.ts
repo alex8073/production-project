@@ -1,1 +1,5 @@
-export type IDropdownDirection = "topLeft" | "topRight" | "bottomLeft" | "bottomRight";
+export type IDropdownDirection =
+    | "topLeft"
+    | "topRight"
+    | "bottomLeft"
+    | "bottomRight";

@@ -1,11 +1,12 @@
 import { Story, StoryContext } from "@storybook/react";
 // eslint-disable-next-line path-checker-fsd-stable/layer-imports
 import "@/app/styles/index.scss";
-import {
-    BrowserRouter, MemoryRouter, Route, Routes,
-} from "react-router-dom";
+import { BrowserRouter, MemoryRouter, Route, Routes } from "react-router-dom";
 
-export const RouterDecorator = (StoryComponent: Story, { parameters: { router } }: StoryContext) => {
+export const RouterDecorator = (
+    StoryComponent: Story,
+    { parameters: { router } }: StoryContext,
+) => {
     if (!router) {
         return (
             <BrowserRouter>

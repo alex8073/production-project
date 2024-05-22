@@ -11,7 +11,7 @@ interface IProfilePageProps {
 }
 
 const ProfilePage = memo(({ className }: IProfilePageProps) => {
-    const { id } = useParams<{id: string}>();
+    const { id } = useParams<{ id: string }>();
     const { t } = useTranslation("profile");
 
     if (!id) {
@@ -19,7 +19,10 @@ const ProfilePage = memo(({ className }: IProfilePageProps) => {
     }
 
     return (
-        <Page className={classNames("", {}, [className])} data-testid="ProfilePage">
+        <Page
+            className={classNames("", {}, [className])}
+            data-testid="ProfilePage"
+        >
             <EditableProfileCard id={id} />
         </Page>
     );

@@ -25,9 +25,7 @@ export const Code = memo((props: ICodeProps) => {
             >
                 <CopyIcon />
             </Button>
-            <code>
-                {text}
-            </code>
+            <code>{text}</code>
         </pre>
     );
 });

@@ -13,33 +13,36 @@ interface ITabsProps {
     className?: string;
     tabs: ITabItem[];
     value: string;
-    onTabClick: (tab: ITabItem)=>void;
+    onTabClick: (tab: ITabItem) => void;
 }
 
 export const Tabs = memo((props: ITabsProps) => {
-    const {
-        className, tabs, value, onTabClick,
-    } = props;
+    const { className, tabs, value, onTabClick } = props;
     const { t } = useTranslation();
 
-    const clickHandler = useCallback((tab: ITabItem) => () => {
-        onTabClick(tab);
-    }, [onTabClick]);
+    const clickHandler = useCallback(
+        (tab: ITabItem) => () => {
+            onTabClick(tab);
+        },
+        [onTabClick],
+    );
 
     return (
         <div className={classNames(cls.Tabs, {}, [className])}>
-            {
-                tabs.map((tab) => (
-                    <Card
-                        theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINED}
-                        className={cls.tab}
-                        onClick={clickHandler(tab)}
-                        key={tab.value}
-                    >
-                        {tab.content}
-                    </Card>
-                ))
-            }
+            {tabs.map((tab) => (
+                <Card
+                    theme={
+                        tab.value === value
+                            ? CardTheme.NORMAL
+                            : CardTheme.OUTLINED
+                    }
+                    className={cls.tab}
+                    onClick={clickHandler(tab)}
+                    key={tab.value}
+                >
+                    {tab.content}
+                </Card>
+            ))}
         </div>
     );
 });

@@ -19,19 +19,18 @@ export const articleDetailsSlice = createSlice({
                 state.error = undefined;
                 state.isLoading = true;
             })
-            .addCase(fetchArticleById.fulfilled, (
-                state,
-                action: PayloadAction<IArticle>,
-            ) => {
-                state.isLoading = false;
-                state.data = action.payload;
-            })
+            .addCase(
+                fetchArticleById.fulfilled,
+                (state, action: PayloadAction<IArticle>) => {
+                    state.isLoading = false;
+                    state.data = action.payload;
+                },
+            )
             .addCase(fetchArticleById.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
             });
     },
-
 });
 
 // Action creators are generated for each case reducer function

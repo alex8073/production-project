@@ -23,25 +23,35 @@ const viewTypes = [
     },
 ];
 
-export const ArticleListViewSelector = memo((props: IArticleListViewSelectorProps) => {
-    const { className, view, onViewClick } = props;
+export const ArticleListViewSelector = memo(
+    (props: IArticleListViewSelectorProps) => {
+        const { className, view, onViewClick } = props;
 
-    const onClick = (newView:ArticleListView) => () => {
-        onViewClick?.(newView);
-    };
+        const onClick = (newView: ArticleListView) => () => {
+            onViewClick?.(newView);
+        };
 
-    return (
-        <div className={classNames(cls.ArticleListViewSelector, {}, [className])}>
-            {viewTypes.map((viewType) => (
-                <Button
-                    key={viewType.view}
-                    theme={ButtonTheme.CLEAR}
-                    onClick={onClick(viewType.view)}
-                    className={classNames("viewSelector", { [cls.selected]: viewType.view === view }, [])}
-                >
-                    {viewType.icon}
-                </Button>
-            ))}
-        </div>
-    );
-});
+        return (
+            <div
+                className={classNames(cls.ArticleListViewSelector, {}, [
+                    className,
+                ])}
+            >
+                {viewTypes.map((viewType) => (
+                    <Button
+                        key={viewType.view}
+                        theme={ButtonTheme.CLEAR}
+                        onClick={onClick(viewType.view)}
+                        className={classNames(
+                            "viewSelector",
+                            { [cls.selected]: viewType.view === view },
+                            [],
+                        )}
+                    >
+                        {viewType.icon}
+                    </Button>
+                ))}
+            </div>
+        );
+    },
+);

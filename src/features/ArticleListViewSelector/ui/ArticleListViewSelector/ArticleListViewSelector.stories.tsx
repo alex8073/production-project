@@ -11,9 +11,9 @@ export default {
     },
 } as ComponentMeta<typeof ArticleListViewSelector>;
 
-const Template: ComponentStory<typeof ArticleListViewSelector> = (args) => <ArticleListViewSelector {...args} />;
+const Template: ComponentStory<typeof ArticleListViewSelector> = (args) => (
+    <ArticleListViewSelector {...args} />
+);
 
 export const Normal = Template.bind({});
-Normal.args = {
-
-};
+Normal.args = {};

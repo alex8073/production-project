@@ -5,7 +5,10 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { Avatar } from "@/shared/ui/Avatar";
 import { Dropdown } from "@/shared/ui/Popups";
 import {
-    getUserAuthData, isUserAdmin, isUserManager, userActions,
+    getUserAuthData,
+    isUserAdmin,
+    isUserManager,
+    userActions,
 } from "@/entities/User";
 import cls from "./AvatarDropdown.module.scss";
 import { getRouteAdmin, getRouteProfile } from "@/shared/const/router";
@@ -35,15 +38,15 @@ export const AvatarDropdown = memo((props: IAvatarDropdownProps) => {
     return (
         <Dropdown
             direction="bottomLeft"
-            trigger={(
-                <Avatar
-                    size={30}
-                    src={authData.avatar}
-                />
-            )}
+            trigger={<Avatar size={30} src={authData.avatar} />}
             items={[
-                ...(isAdminPanelAvailable ? [{ content: t("Admin panel"), href: getRouteAdmin() }] : []),
-                { content: t("User profile"), href: getRouteProfile(authData.id) },
+                ...(isAdminPanelAvailable
+                    ? [{ content: t("Admin panel"), href: getRouteAdmin() }]
+                    : []),
+                {
+                    content: t("User profile"),
+                    href: getRouteProfile(authData.id),
+                },
                 { content: t("Log out"), onClick: onLogOut },
             ]}
             className={classNames(cls.AvatarDropdown, {}, [className])}
