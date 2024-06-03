@@ -1,5 +1,6 @@
 import { UserRole } from "../consts/consts";
 import { IFeatureFlags } from "@/shared/types/featureFlags";
+import { IJsonSettings } from "./jsonSettings";
 
 export interface IUser {
     id: string;
@@ -7,6 +8,7 @@ export interface IUser {
     avatar?: string;
     roles?: UserRole[];
     features?: IFeatureFlags;
+    jsonSettings?: IJsonSettings;
 }
 
 export interface IUserSchema {
