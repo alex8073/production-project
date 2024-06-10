@@ -13,6 +13,7 @@ import { ArticleInfiniteList } from "../ArticleInfiniteList/ArticleInfiniteList"
 import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 import { articlePageReducer } from "../../model/slice/articlePageSlice";
+import { ArticlePageGreeting } from "@/features/ArticlePageGreeting";
 
 interface IArticlesPageProps {
     className?: string;
@@ -41,6 +42,7 @@ const ArticlesPage = (props: IArticlesPageProps) => {
                 <VStack gap="32" max style={{ height: "100%" }}>
                     <ArticlesPageFilters />
                     <ArticleInfiniteList />
+                    <ArticlePageGreeting />
                 </VStack>
             </Page>
         </DynamicModuleLoader>
