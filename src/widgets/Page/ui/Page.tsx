@@ -13,6 +13,7 @@ import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./Page.module.scss";
 import { ITestProps } from "@/shared/types/tests";
+import { toggleFeatures } from "@/shared/lib/features";
 
 interface IPageProps extends ITestProps {
     className?: string;
@@ -55,7 +56,15 @@ export const Page = memo((props: IPageProps) => {
     return (
         <main
             ref={wrapperRef}
-            className={classNames(cls.Page, {}, [className])}
+            className={classNames(
+                toggleFeatures({
+                    name: "isAppRedesigned",
+                    on: () => cls.PageRedesigned,
+                    off: () => cls.Page,
+                }),
+                {},
+                [className],
+            )}
             onScroll={onScroll}
             id={PAGE_ID}
             data-testid={props["data-testid"] ?? "Page"}
